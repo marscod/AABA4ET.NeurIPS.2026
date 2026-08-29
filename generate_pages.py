@@ -71,8 +71,6 @@ def social_icons(website: str | None = None, linkedin: str | None = None) -> str
 
 
 def person_name(name: str, website: str | None = None) -> str:
-    if website:
-        return f'<h3><a href="{website}" target="_blank" rel="noopener">{name}</a></h3>'
     return f"<h3>{name}</h3>"
 
 

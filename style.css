@@ -657,29 +657,32 @@ body.past-sub .page-hero__media {
 .social-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
-  margin-top: 0.35rem;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.25rem;
 }
 .social-icons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
   color: var(--teal-deep);
-  background: rgba(13, 115, 119, 0.08);
-  border: 1px solid transparent;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  transition: color 0.15s ease, opacity 0.15s ease;
 }
 .social-icons a:hover {
-  background: rgba(13, 115, 119, 0.16);
-  border-color: rgba(13, 115, 119, 0.25);
   color: var(--ink);
+  opacity: 0.85;
+  background: transparent;
+  border-color: transparent;
 }
 .social-icons svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
   display: block;
 }
 @media (max-width: 640px) {
@@ -692,8 +695,12 @@ body.past-sub .page-hero__media {
     height: 96px;
   }
   .social-icons a {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
+  }
+  .social-icons svg {
+    width: 16px;
+    height: 16px;
   }
 }
 
