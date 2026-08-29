@@ -291,11 +291,12 @@ speakers_body = """  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="images/speakers/yu-su.jpg" alt="Yu Su" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           <h3>Yu Su</h3>
-          <p class="role">Associate Professor, Ohio State University</p>
+          <p class="role">Associate Professor, Computer Science and Engineering, Ohio State University</p>
           <p class="title-talk">Title: TBD</p>
+          <p>Yu Su is an Associate Professor in the Department of Computer Science and Engineering at the Ohio State University and a College of Engineering Innovation Scholar. Before coming to OSU, he was Senior Researcher at Microsoft Semantic Machines working on conversational AI. He received his PhD from University of California, Santa Barbara and his bachelor’s degree from Tsinghua University, both in Computer Science. His awards include the Outstanding Dissertation Award from UCSB and Best of IEEE ICDM 2019 Selection. His expertise includes natural language processing, artificial intelligence, conversational AI, and knowledge bases.</p>
         </div>
       </article>
 
