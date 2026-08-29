@@ -587,10 +587,20 @@ body.past-sub .page-hero__media {
 }
 .person-full {
   display: grid;
-  gap: 0.75rem;
-  padding: 1.5rem 0;
+  grid-template-columns: 140px 1fr;
+  gap: 1.25rem 1.5rem;
+  align-items: start;
+  padding: 1.75rem 0;
   border-top: 1px solid var(--line);
 }
+.person-photo {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--mist);
+}
+.person-copy { display: grid; gap: 0.55rem; }
 .person-full h3 {
   font-family: "Fraunces", serif;
   font-size: 1.35rem;
@@ -602,6 +612,16 @@ body.past-sub .page-hero__media {
   font-size: 0.92rem;
   padding-left: 0.9rem;
   border-left: 3px solid var(--teal);
+}
+@media (max-width: 640px) {
+  .person-full {
+    grid-template-columns: 96px 1fr;
+    gap: 0.9rem 1rem;
+  }
+  .person-photo {
+    width: 96px;
+    height: 96px;
+  }
 }
 
 .deadline-list, .link-list, .paper-list, .pc-list {

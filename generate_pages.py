@@ -315,36 +315,51 @@ organizers_body = """  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Team</p>
       <h2>Organizers</h2>
-      <div class="person-full">
-        <h3>Graham Neubig</h3>
-        <p class="role">Associate Professor, Language Technologies Institute, Carnegie Mellon University</p>
-        <p>A prominent figure in machine learning and NLP, with extensive work on large language models, question answering, code generation, and evaluation. Academic leadership includes organizing workshops such as the ACL 2017 workshop on neural machine translation.</p>
-        <p class="expertise"><strong>Expertise:</strong> LLMs, QA, code generation, multilingual processing, evaluation/interpretability; workshop organization.</p>
-      </div>
-      <div class="person-full">
-        <h3>Yonatan Bisk</h3>
-        <p class="role">Assistant Professor, Language Technologies Institute, Carnegie Mellon University</p>
-        <p>Research focuses on Natural Language Processing with an emphasis on grounding and embodiment. Extensive program committee experience for major conferences (NeurIPS 2023, ICLR 2024).</p>
-        <p class="expertise"><strong>Expertise:</strong> NLP, grounding, embodiment; conference reviewing.</p>
-      </div>
-      <div class="person-full">
-        <h3>Hideo Saito</h3>
-        <p class="role">Professor, Department of Information and Computer Science, Keio University</p>
-        <p>Specializes in computer vision, pattern recognition, computational photography, and XR applications. Program Chair for ACCV 2014, General Chair for ISMAR 2015, ISMAR 2023 Best Journal Paper Award; organized workshops at ISMAR, WACV, and ACM Multimedia.</p>
-        <p class="expertise"><strong>Expertise:</strong> Computer vision, vision-based sensing/recognition, human behavior sensing and applications.</p>
-      </div>
-      <div class="person-full">
-        <h3>Alexandre Drouin</h3>
-        <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
-        <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
-        <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
-      </div>
-      <div class="person-full">
-        <h3>Atsunori Moteki</h3>
-        <p class="role">Senior Research Manager, Artificial Intelligence Laboratory, Fujitsu Limited</p>
-        <p>Research interests include Agentic AI, computer vision, and HCI (including XR) in manufacturing and retail. His team recently proposed a benchmark for AI agents that support on-site field work.</p>
-        <p class="expertise"><strong>Expertise:</strong> Agentic AI, computer vision, human–computer interaction.</p>
-      </div>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/neubig.jpg" alt="Graham Neubig" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          <h3>Graham Neubig</h3>
+          <p class="role">Associate Professor, Language Technologies Institute, Carnegie Mellon University</p>
+          <p>A prominent figure in machine learning and NLP, with extensive work on large language models, question answering, code generation, and evaluation. Academic leadership includes organizing workshops such as the ACL 2017 workshop on neural machine translation.</p>
+          <p class="expertise"><strong>Expertise:</strong> LLMs, QA, code generation, multilingual processing, evaluation/interpretability; workshop organization.</p>
+        </div>
+      </article>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/bisk.jpg" alt="Yonatan Bisk" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          <h3>Yonatan Bisk</h3>
+          <p class="role">Assistant Professor, Language Technologies Institute, Carnegie Mellon University</p>
+          <p>Research focuses on Natural Language Processing with an emphasis on grounding and embodiment. Extensive program committee experience for major conferences (NeurIPS 2023, ICLR 2024).</p>
+          <p class="expertise"><strong>Expertise:</strong> NLP, grounding, embodiment; conference reviewing.</p>
+        </div>
+      </article>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/saito.jpg" alt="Hideo Saito" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          <h3>Hideo Saito</h3>
+          <p class="role">Professor, Department of Information and Computer Science, Keio University</p>
+          <p>Specializes in computer vision, pattern recognition, computational photography, and XR applications. Program Chair for ACCV 2014, General Chair for ISMAR 2015, ISMAR 2023 Best Journal Paper Award; organized workshops at ISMAR, WACV, and ACM Multimedia.</p>
+          <p class="expertise"><strong>Expertise:</strong> Computer vision, vision-based sensing/recognition, human behavior sensing and applications.</p>
+        </div>
+      </article>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/drouin.png" alt="Alexandre Drouin" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          <h3>Alexandre Drouin</h3>
+          <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
+          <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
+          <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
+        </div>
+      </article>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/moteki.jpg" alt="Atsunori Moteki" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          <h3>Atsunori Moteki</h3>
+          <p class="role">Senior Research Manager, Artificial Intelligence Laboratory, Fujitsu Limited</p>
+          <p>Research interests include Agentic AI, computer vision, and HCI (including XR) in manufacturing and retail. His team recently proposed a benchmark for AI agents that support on-site field work.</p>
+          <p class="expertise"><strong>Expertise:</strong> Agentic AI, computer vision, human–computer interaction.</p>
+        </div>
+      </article>
     </div>
   </section>
   <section class="page-section">
