@@ -367,7 +367,7 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="https://cloudlab.ucmerced.edu/sites/g/files/ufvvjh636/f/page/images/mehdi_bahrami_ucmerced_cloudlab_hq.jpg" alt="Mehdi Bahrami" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
           <p class="role">Fujitsu Research of America</p>
