@@ -1,5 +1,31 @@
-/* Reveal topic rows when they enter the viewport (respects reduced motion via CSS). */
+/* Mobile nav + dropdown + topic reveal */
 (function () {
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector(".site-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const open = nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  document.querySelectorAll(".nav-dropdown").forEach((drop) => {
+    const btn = drop.querySelector("button");
+    if (!btn) return;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = !drop.classList.contains("open");
+      document.querySelectorAll(".nav-dropdown.open").forEach((d) => {
+        if (d !== drop) d.classList.remove("open");
+      });
+      drop.classList.toggle("open", willOpen);
+    });
+  });
+
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+  });
+
   const items = document.querySelectorAll(".topic");
   if (!items.length || !("IntersectionObserver" in window)) return;
 

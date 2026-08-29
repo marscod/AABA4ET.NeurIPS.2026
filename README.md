@@ -1,26 +1,42 @@
 # AABA4ET — NeurIPS 2026 Workshop site
 
-Static landing page for the 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks.
+Static multi-page site for the 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks.
 
-## Live site (GitHub Pages)
+## Live site
 
 https://marscod.github.io/AABA4ET.NeurIPS.2026/
 
+### Pages
+
+| Page | URL path |
+|------|----------|
+| Home | `/` |
+| Call for Papers | `/call-for-papers.html` |
+| Speakers | `/speakers.html` |
+| Schedule | `/schedule.html` |
+| Organizers | `/organizers.html` |
+| Accepted Papers | `/accepted-papers.html` |
+| Past Workshop | `/past-workshop.html` |
+| AAAI 2026 archive | `/past/aaai-2026-*.html` |
+
 ## Embed in Google Sites
 
-1. Open your Google Site.
-2. **Insert → Embed → By URL**
-3. Paste: `https://marscod.github.io/AABA4ET.NeurIPS.2026/`
-4. Stretch the embed full width (height ~2500–3200px).
+**Insert → Embed → By URL** and paste:
 
-Do **not** use `github.com/.../blob/...` URLs.
+`https://marscod.github.io/AABA4ET.NeurIPS.2026/`
+
+Or embed a specific page, e.g. speakers:
+
+`https://marscod.github.io/AABA4ET.NeurIPS.2026/speakers.html`
+
+## Regenerate pages
+
+```bash
+python3 generate_pages.py
+```
 
 ## Local preview
-
-Open `index.html` in a browser, or:
 
 ```bash
 python3 -m http.server 8080
 ```
-
-Then visit http://localhost:8080
