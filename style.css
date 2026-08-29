@@ -622,6 +622,15 @@ body.past-sub .page-hero__media {
   padding-left: 0.9rem;
   border-left: 3px solid var(--teal);
 }
+.person-photo--placeholder {
+  background: linear-gradient(145deg, #d7e4e8, #eef3f6);
+  border: 1px solid var(--line);
+}
+.speaker .title-talk {
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
 @media (max-width: 640px) {
   .person-full {
     grid-template-columns: 96px 1fr;
