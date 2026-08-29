@@ -1,29 +1,20 @@
-/* Mobile nav + dropdown + topic reveal */
+/* Mobile nav + topic reveal */
 (function () {
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
+
   if (toggle && nav) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
       const open = nav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
 
-  document.querySelectorAll(".nav-dropdown").forEach((drop) => {
-    const btn = drop.querySelector("button");
-    if (!btn) return;
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const willOpen = !drop.classList.contains("open");
-      document.querySelectorAll(".nav-dropdown.open").forEach((d) => {
-        if (d !== drop) d.classList.remove("open");
-      });
-      drop.classList.toggle("open", willOpen);
-    });
-  });
-
-  document.addEventListener("click", () => {
-    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (nav) nav.classList.remove("is-open");
+    if (toggle) toggle.setAttribute("aria-expanded", "false");
   });
 
   const items = document.querySelectorAll(".topic");
