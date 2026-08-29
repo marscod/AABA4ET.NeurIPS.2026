@@ -361,7 +361,7 @@ panel_body = f"""  <section class="page-section">
         <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
         <div class="person-copy">
           {person_name("Kamelia Aryafar")}
-          <p class="role">AI and Engineering Executive @ Netflix</p>
+          <p class="role">AI and Engineering Executive, Netflix</p>
 {social_icons("https://www.karyafar.com/", "https://www.linkedin.com/in/karyafar", "https://scholar.google.com/citations?user=whu7X_kAAAAJ&hl=en")}
         </div>
       </article>
@@ -370,7 +370,7 @@ panel_body = f"""  <section class="page-section">
         <img class="person-photo" src="images/panelists/mehdi-bahrami.jpg" alt="Mehdi Bahrami" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
-          <p class="role">Fujitsu Research of America</p>
+          <p class="role">Senior Research Manager, Fujitsu Research of America</p>
           <p>Dr. Mehdi Bahrami is a Senior Research Manager at Fujitsu Research of America, where he leads research on Agentic AI, LLM-based agents, and AI for software engineering. His recent work includes Kozuchi Agent, an open-weight agent framework for autonomous software engineering and repair. His broader research interests include generative AI, LLMs, and applied machine learning.</p>
           <p>Dr. Bahrami has over 15 years of experience in software engineering and industrial AI research, with 30+ technical publications and 34+ granted U.S. patents. He is an ACM Distinguished Speaker and Senior Member of ACM and IEEE, and a recipient of the 2024 IEEE Outstanding Engineer Award for pioneering contributions to generative AI and API automation. His work has also been recognized with multiple industry awards and featured by leading technology media, including MIT Technology Review.</p>
 {social_icons("https://cloudlab.ucmerced.edu/~mehdi-bahrami", "https://www.linkedin.com/in/mehdi-bahrami-cs", "https://scholar.google.com/citations?user=xAGN8vcAAAAJ&hl=en")}
