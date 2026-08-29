@@ -72,7 +72,7 @@ def page(title, active, body, *, prefix="", body_class="", hero_title="", hero_l
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{title}</title>
 {FONTS}
   <link rel="stylesheet" href="{css}" />
