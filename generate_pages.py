@@ -370,7 +370,7 @@ panel_body = f"""  <section class="page-section">
         <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
-          <p class="role">Senior Research Manager</p>
+          <p class="role">Fujitsu Research of America</p>
 {social_icons("https://cloudlab.ucmerced.edu/~mehdi-bahrami", "https://www.linkedin.com/in/mehdi-bahrami-cs", "https://scholar.google.com/citations?user=xAGN8vcAAAAJ&hl=en")}
         </div>
       </article>
