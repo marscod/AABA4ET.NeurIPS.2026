@@ -24,6 +24,7 @@ def nav(active: str, prefix: str = "") -> str:
         {a("index.html", "Home", "home")}
         {a("call-for-papers.html", "CFP", "cfp")}
         {a("speakers.html", "Speakers", "speakers")}
+        {a("panel.html", "Panel", "panel")}
         {a("schedule.html", "Schedule", "schedule")}
         {a("organizers.html", "Organizers", "organizers")}
         {a("accepted-papers.html", "Papers", "accepted")}
@@ -40,6 +41,7 @@ def footer(prefix: str = "") -> str:
         <a href="{prefix}index.html">Home</a>
         <a href="{prefix}call-for-papers.html">CFP</a>
         <a href="{prefix}speakers.html">Speakers</a>
+        <a href="{prefix}panel.html">Panel</a>
         <a href="{prefix}schedule.html">Schedule</a>
         <a href="{prefix}organizers.html">Organizers</a>
         <a href="{prefix}accepted-papers.html">Accepted Papers</a>
@@ -349,6 +351,32 @@ speakers_body = f"""  <section class="page-section">
   </section>
 """
 
+# —— Panel ——
+panel_body = f"""  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">Discussion</p>
+      <h2>Panelists</h2>
+      <p class="lede">Bios will be announced soon.</p>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
+          {person_name("Kamelia Aryafar")}
+          <p class="role">Netflix</p>
+        </div>
+      </article>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
+          {person_name("Mehdi Bahrami")}
+          <p class="role">Senior Research Manager</p>
+        </div>
+      </article>
+    </div>
+  </section>
+"""
+
 # —— Schedule ——
 schedule_body = """  <section class="page-section">
     <div class="wrap">
@@ -459,6 +487,12 @@ accepted_body = """  <section class="page-section">
     "Speakers — AABA4ET NeurIPS 2026", "speakers", speakers_body,
     hero_title="Speakers",
     hero_lede="Invited talks at NeurIPS 2026 in Sydney",
+))
+
+(ROOT / "panel.html").write_text(page(
+    "Panel — AABA4ET NeurIPS 2026", "panel", panel_body,
+    hero_title="Panel",
+    hero_lede="Industry and research perspectives on agentic AI for enterprise",
 ))
 
 (ROOT / "schedule.html").write_text(page(
