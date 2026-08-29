@@ -55,8 +55,14 @@ ICON_WEB = """<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
 
 ICON_LI = """<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>"""
 
+ICON_GS = """<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>"""
 
-def social_icons(website: str | None = None, linkedin: str | None = None) -> str:
+
+def social_icons(
+    website: str | None = None,
+    linkedin: str | None = None,
+    scholar: str | None = None,
+) -> str:
     parts = ['      <div class="social-icons">']
     if website:
         parts.append(
@@ -66,8 +72,12 @@ def social_icons(website: str | None = None, linkedin: str | None = None) -> str
         parts.append(
             f'        <a href="{linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">{ICON_LI}</a>'
         )
+    if scholar:
+        parts.append(
+            f'        <a href="{scholar}" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">{ICON_GS}</a>'
+        )
     parts.append("      </div>")
-    return "\n".join(parts) if (website or linkedin) else ""
+    return "\n".join(parts) if (website or linkedin or scholar) else ""
 
 
 def person_name(name: str, website: str | None = None) -> str:
@@ -311,7 +321,7 @@ speakers_body = f"""  <section class="page-section">
           <p class="role">Assistant Professor, Computer Science Department, Stanford University</p>
           <p class="title-talk">Title: TBD</p>
           <p>Diyi Yang is an assistant professor in the Computer Science Department at Stanford University, also affiliated with the Stanford NLP Group, Stanford HCI Group and Stanford Human Centered AI Institute. Her research focuses on human-centered natural language processing and human-AI interaction. She is a recipient of IEEE “AI 10 to Watch” (2020), Microsoft Research Faculty Fellowship (2021), NSF CAREER Award (2022), an ONR Young Investigator Award (2023), and a Sloan Research Fellowship (2024). Her work has received multiple paper awards or nominations at top NLP and HCI conferences.</p>
-{social_icons("https://nlp.stanford.edu/~diyiy/", "https://www.linkedin.com/in/diyi-yang-10561924")}
+{social_icons("https://nlp.stanford.edu/~diyiy/", "https://www.linkedin.com/in/diyi-yang-10561924", "https://scholar.google.com/citations?user=j9jhYqQAAAAJ&hl=en")}
         </div>
       </article>
 
@@ -322,7 +332,7 @@ speakers_body = f"""  <section class="page-section">
           <p class="role">Associate Professor, Computer Science and Engineering, Ohio State University</p>
           <p class="title-talk">Title: TBD</p>
           <p>Yu Su is an Associate Professor in the Department of Computer Science and Engineering at the Ohio State University and a College of Engineering Innovation Scholar. Before coming to OSU, he was Senior Researcher at Microsoft Semantic Machines working on conversational AI. He received his PhD from University of California, Santa Barbara and his bachelor’s degree from Tsinghua University, both in Computer Science. His awards include the Outstanding Dissertation Award from UCSB and Best of IEEE ICDM 2019 Selection. His expertise includes natural language processing, artificial intelligence, conversational AI, and knowledge bases.</p>
-{social_icons("https://ysu1989.github.io/", "https://www.linkedin.com/in/ysu1989")}
+{social_icons("https://ysu1989.github.io/", "https://www.linkedin.com/in/ysu1989", "https://scholar.google.com/citations?user=rIh5OqoAAAAJ&hl=en")}
         </div>
       </article>
 
@@ -332,7 +342,7 @@ speakers_body = f"""  <section class="page-section">
           {person_name("Wei-Peng Chen")}
           <p class="role">Research Director, Fujitsu Research of America, Inc.</p>
           <p class="title-talk">Title: TBD</p>
-{social_icons(linkedin="https://www.linkedin.com/in/wei-peng-chen-882819a")}
+{social_icons(linkedin="https://www.linkedin.com/in/wei-peng-chen-882819a", scholar="https://scholar.google.com/citations?user=YBjteIQAAAAJ&hl=en")}
         </div>
       </article>
     </div>
@@ -365,7 +375,7 @@ organizers_body = f"""  <section class="page-section">
           <p class="role">Associate Professor, Language Technologies Institute, Carnegie Mellon University</p>
           <p>A prominent figure in machine learning and NLP, with extensive work on large language models, question answering, code generation, and evaluation. Academic leadership includes organizing workshops such as the ACL 2017 workshop on neural machine translation.</p>
           <p class="expertise"><strong>Expertise:</strong> LLMs, QA, code generation, multilingual processing, evaluation/interpretability; workshop organization.</p>
-{social_icons("https://www.phontron.com/", "https://www.linkedin.com/in/graham-neubig-10b41616b")}
+{social_icons("https://www.phontron.com/", "https://www.linkedin.com/in/graham-neubig-10b41616b", "https://scholar.google.com/citations?user=wlosgkoAAAAJ&hl=en")}
         </div>
       </article>
       <article class="person-full">
@@ -375,7 +385,7 @@ organizers_body = f"""  <section class="page-section">
           <p class="role">Assistant Professor, Language Technologies Institute, Carnegie Mellon University</p>
           <p>Research focuses on Natural Language Processing with an emphasis on grounding and embodiment. Extensive program committee experience for major conferences (NeurIPS 2023, ICLR 2024).</p>
           <p class="expertise"><strong>Expertise:</strong> NLP, grounding, embodiment; conference reviewing.</p>
-{social_icons("https://yonatanbisk.com/", "https://www.linkedin.com/in/yonatanbisk")}
+{social_icons("https://yonatanbisk.com/", "https://www.linkedin.com/in/yonatanbisk", "https://scholar.google.com/citations?user=bWoGh8UAAAAJ&hl=en")}
         </div>
       </article>
       <article class="person-full">
@@ -385,7 +395,7 @@ organizers_body = f"""  <section class="page-section">
           <p class="role">Professor, Department of Information and Computer Science, Keio University</p>
           <p>Specializes in computer vision, pattern recognition, computational photography, and XR applications. Program Chair for ACCV 2014, General Chair for ISMAR 2015, ISMAR 2023 Best Journal Paper Award; organized workshops at ISMAR, WACV, and ACM Multimedia.</p>
           <p class="expertise"><strong>Expertise:</strong> Computer vision, vision-based sensing/recognition, human behavior sensing and applications.</p>
-{social_icons("http://www.hvrl.ics.keio.ac.jp/professor-saito/")}
+{social_icons("http://www.hvrl.ics.keio.ac.jp/professor-saito/", scholar="https://scholar.google.com/citations?user=JU9x-bcAAAAJ&hl=en")}
         </div>
       </article>
       <article class="person-full">
@@ -395,7 +405,7 @@ organizers_body = f"""  <section class="page-section">
           <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
           <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
           <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
-{social_icons("https://www.alexdrouin.com/", "https://linkedin.com/in/drouinalexandre")}
+{social_icons("https://www.alexdrouin.com/", "https://linkedin.com/in/drouinalexandre", "https://scholar.google.com/citations?user=LR6aJcEAAAAJ&hl=en")}
         </div>
       </article>
       <article class="person-full">
