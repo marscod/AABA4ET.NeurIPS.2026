@@ -356,7 +356,6 @@ panel_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Discussion</p>
       <h2>Panelists</h2>
-      <p class="lede">Bios will be announced soon.</p>
 
       <article class="person-full speaker">
         <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
