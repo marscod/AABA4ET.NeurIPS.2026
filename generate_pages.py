@@ -215,7 +215,10 @@ home_body = """  <header class="hero">
             Double-blind review. Dual submission welcome. At least one author must present in person.
           </p>
         </div>
-        <a class="btn btn-solid" href="call-for-papers.html">Read the CFP</a>
+        <div class="cta-row">
+          <a class="btn btn-solid" href="call-for-papers.html">Read the CFP</a>
+          <a class="btn btn-ghost" style="border-color:var(--teal);color:var(--teal-deep);background:transparent" href="https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip" target="_blank" rel="noopener">Paper template</a>
+        </div>
       </div>
     </div>
   </section>
@@ -234,7 +237,7 @@ cfp_body = """  <section class="page-section">
       <p class="eyebrow">Guidelines</p>
       <h2>How to submit</h2>
       <ul class="guidelines">
-        <li><strong>Format:</strong> Official NeurIPS 2026 LaTeX style (<code>neurips_2026.sty</code>).</li>
+        <li><strong>Format:</strong> Official NeurIPS 2026 LaTeX style (<code>neurips_2026.sty</code>). Download the <a href="https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip" target="_blank" rel="noopener">paper template ZIP</a>.</li>
         <li><strong>Page limit:</strong> Up to 4 pages including figures and tables. References and optional appendices are unlimited.</li>
         <li><strong>Anonymity:</strong> Double-blind. Omit names, affiliations, and identifying information. Do not use <code>preprint</code> or <code>final</code> style options.</li>
         <li><strong>File:</strong> One anonymized PDF (main + references + optional appendix).</li>
@@ -244,6 +247,7 @@ cfp_body = """  <section class="page-section">
       </ul>
       <div class="cta-row" style="margin-top:1.75rem">
         <a class="btn btn-solid" href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AABA4ET" target="_blank" rel="noopener">Submit on OpenReview</a>
+        <a class="btn btn-ghost" style="border-color:var(--teal);color:var(--teal-deep);background:transparent" href="https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip" target="_blank" rel="noopener">Download paper template</a>
       </div>
     </div>
   </section>
