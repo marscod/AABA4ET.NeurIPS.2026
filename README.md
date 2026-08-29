@@ -16,8 +16,7 @@ https://marscod.github.io/AABA4ET.NeurIPS.2026/
 | Schedule | `/schedule.html` |
 | Organizers | `/organizers.html` |
 | Accepted Papers | `/accepted-papers.html` |
-| Past Workshop | `/past-workshop.html` |
-| AAAI 2026 archive | `/past/aaai-2026-*.html` |
+| Past Workshop | Links to [original Google Sites archive](https://sites.google.com/view/aaba4et/past-workshop) |
 
 ## Embed in Google Sites
 
