@@ -362,7 +362,8 @@ panel_body = f"""  <section class="page-section">
         <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
         <div class="person-copy">
           {person_name("Kamelia Aryafar")}
-          <p class="role">Netflix</p>
+          <p class="role">AI and Engineering Executive @ Netflix</p>
+{social_icons("https://www.karyafar.com/", "https://www.linkedin.com/in/karyafar", "https://scholar.google.com/citations?user=whu7X_kAAAAJ&hl=en")}
         </div>
       </article>
 
@@ -371,6 +372,7 @@ panel_body = f"""  <section class="page-section">
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
           <p class="role">Senior Research Manager</p>
+{social_icons("https://cloudlab.ucmerced.edu/~mehdi-bahrami", "https://www.linkedin.com/in/mehdi-bahrami-cs", "https://scholar.google.com/citations?user=xAGN8vcAAAAJ&hl=en")}
         </div>
       </article>
     </div>
