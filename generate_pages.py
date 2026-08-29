@@ -367,10 +367,12 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <img class="person-photo" src="https://cloudlab.ucmerced.edu/sites/g/files/ufvvjh636/f/page/images/mehdi_bahrami_ucmerced_cloudlab_hq.jpg" alt="Mehdi Bahrami" width="160" height="160" loading="lazy" />
+        <img class="person-photo" src="images/panelists/mehdi-bahrami.jpg" alt="Mehdi Bahrami" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
           <p class="role">Fujitsu Research of America</p>
+          <p><strong>Dr. Mehdi Bahrami</strong> is a <strong>Senior Research Manager at Fujitsu Research of America</strong>, where he leads research on <strong>Agentic AI, LLM-based agents, and AI for software engineering</strong>. His recent work includes <strong>Kozuchi Agent</strong>, an open-weight agent framework for software engineering and autonomous software repair. His broader research interests span generative AI, LLMs, applied machine learning, and intelligent software systems.</p>
+          <p>Dr. Bahrami has over 15 years of experience in software engineering and industrial research, with <strong>30+ technical publications and 34+ granted U.S. patents</strong>. His work has been recognized with multiple awards and featured by leading technology media, including <strong>MIT Technology Review</strong>. He is a <strong>Senior Member of ACM and IEEE</strong> and has been an invited and featured speaker at international conferences and research events.</p>
 {social_icons("https://cloudlab.ucmerced.edu/~mehdi-bahrami", "https://www.linkedin.com/in/mehdi-bahrami-cs", "https://scholar.google.com/citations?user=xAGN8vcAAAAJ&hl=en")}
         </div>
       </article>
