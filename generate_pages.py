@@ -28,7 +28,7 @@ def nav(active: str, prefix: str = "") -> str:
         {a("schedule.html", "Schedule", "schedule")}
         {a("organizers.html", "Organizers", "organizers")}
         {a("accepted-papers.html", "Papers", "accepted")}
-        <a href="https://sites.google.com/view/aaba4et/past-workshop" target="_blank" rel="noopener">Past</a>
+        {a("past.html", "Past", "past")}
       </nav>
     </div>
   </header>"""
@@ -45,7 +45,7 @@ def footer(prefix: str = "") -> str:
         <a href="{prefix}schedule.html">Schedule</a>
         <a href="{prefix}organizers.html">Organizers</a>
         <a href="{prefix}accepted-papers.html">Accepted Papers</a>
-        <a href="https://sites.google.com/view/aaba4et/past-workshop" target="_blank" rel="noopener">Past Workshop</a>
+        <a href="{prefix}past.html">Past Workshop</a>
       </div>
       <p>2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks · NeurIPS 2026 · Sydney</p>
     </div>
@@ -265,7 +265,7 @@ cfp_body = """  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Overview</p>
       <h2>Submit original work on Agentic AI for enterprise</h2>
-      <p class="lede">We invite submissions on benchmarking, evaluating, and deploying Agentic AI systems for complex enterprise operations. This is the 2nd edition, following <a href="https://sites.google.com/view/aaba4et/past-workshop/aaai-2026-1st-accepted-papers" target="_blank" rel="noopener">AAAI 2026 in Singapore</a>.</p>
+      <p class="lede">We invite submissions on benchmarking, evaluating, and deploying Agentic AI systems for complex enterprise operations. This is the 2nd edition, following <a href="past.html">AAAI 2026 in Singapore</a>.</p>
     </div>
   </section>
   <section class="page-section">
@@ -474,6 +474,43 @@ accepted_body = """  <section class="page-section">
   </section>
 """
 
+# —— Past ——
+PAST_BASE = "https://sites.google.com/view/aaba4et/past-workshop"
+past_body = f"""  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">AAAI 2026 · Singapore</p>
+      <h2>1st edition archive</h2>
+      <p class="lede">W8: Agentic AI Benchmarks and Applications for Enterprise Tasks · January 26, 2026 · Singapore EXPO. Content is hosted on the original Google Sites archive.</p>
+      <div class="link-list">
+        <div class="link-card">
+          <strong>Overview</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-overview" target="_blank" rel="noopener">AAAI 2026 (1st) — Overview</a>
+        </div>
+        <div class="link-card">
+          <strong>Call for Papers</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-call-for-papers" target="_blank" rel="noopener">AAAI 2026 (1st) — Call for Papers</a>
+        </div>
+        <div class="link-card">
+          <strong>Speakers</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-speakers" target="_blank" rel="noopener">AAAI 2026 (1st) — Speakers</a>
+        </div>
+        <div class="link-card">
+          <strong>Schedule</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-schedule" target="_blank" rel="noopener">AAAI 2026 (1st) — Schedule</a>
+        </div>
+        <div class="link-card">
+          <strong>Organizers</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-organizers" target="_blank" rel="noopener">AAAI 2026 (1st) — Organizers</a>
+        </div>
+        <div class="link-card">
+          <strong>Accepted Papers</strong>
+          <a href="{PAST_BASE}/aaai-2026-1st-accepted-papers" target="_blank" rel="noopener">AAAI 2026 (1st) — Accepted Papers</a>
+        </div>
+      </div>
+    </div>
+  </section>
+"""
+
 # Write files
 (ROOT / "index.html").write_text(page(
     "AABA4ET — NeurIPS 2026 Workshop", "home", home_body, body_class="home"
@@ -506,13 +543,20 @@ accepted_body = """  <section class="page-section">
 (ROOT / "organizers.html").write_text(page(
     "Organizers — AABA4ET NeurIPS 2026", "organizers", organizers_body,
     hero_title="Organizers",
-    hero_lede="Fujitsu · CMU · Keio · ServiceNow",
+    hero_lede="CMU · Fujitsu · Keio · ServiceNow",
 ))
 
 (ROOT / "accepted-papers.html").write_text(page(
     "Accepted Papers — AABA4ET NeurIPS 2026", "accepted", accepted_body,
     hero_title="Accepted Papers",
     hero_lede="Coming after September 29, 2026 notifications",
+))
+
+(ROOT / "past.html").write_text(page(
+    "Past Workshop — AABA4ET", "past", past_body,
+    body_class="past",
+    hero_title="Past Workshop",
+    hero_lede="AAAI 2026 · 1st edition · Singapore",
 ))
 
 print("Generated pages OK")
