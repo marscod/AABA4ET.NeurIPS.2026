@@ -314,7 +314,6 @@ speakers_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Invited talks</p>
       <h2>Confirmed speakers</h2>
-      <p class="lede">Talk titles will be announced soon.</p>
 
       <article class="person-full speaker">
         <img class="person-photo" src="images/speakers/diyi-yang.jpg" alt="Diyi Yang" width="160" height="160" loading="lazy" />
