@@ -430,16 +430,6 @@ organizers_body = f"""  <section class="page-section">
         </div>
       </article>
       <article class="person-full">
-        <img class="person-photo" src="images/organizers/drouin.png" alt="Alexandre Drouin" width="160" height="160" loading="lazy" />
-        <div class="person-copy">
-          {person_name("Alexandre Drouin", "https://www.alexdrouin.com/")}
-          <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
-          <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
-          <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
-{social_icons("https://www.alexdrouin.com/", "https://linkedin.com/in/drouinalexandre", "https://scholar.google.com/citations?user=LR6aJcEAAAAJ&hl=en")}
-        </div>
-      </article>
-      <article class="person-full">
         <img class="person-photo" src="images/organizers/moteki.jpg" alt="Atsunori Moteki" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Atsunori Moteki")}
@@ -447,6 +437,16 @@ organizers_body = f"""  <section class="page-section">
           <p>Research interests include Agentic AI, computer vision, and HCI (including XR) in manufacturing and retail. His team recently proposed a benchmark for AI agents that support on-site field work.</p>
           <p class="expertise"><strong>Expertise:</strong> Agentic AI, computer vision, human–computer interaction.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/atsunori-moteki-a2a095119")}
+        </div>
+      </article>
+      <article class="person-full">
+        <img class="person-photo" src="images/organizers/drouin.png" alt="Alexandre Drouin" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          {person_name("Alexandre Drouin", "https://www.alexdrouin.com/")}
+          <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
+          <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
+          <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
+{social_icons("https://www.alexdrouin.com/", "https://linkedin.com/in/drouinalexandre", "https://scholar.google.com/citations?user=LR6aJcEAAAAJ&hl=en")}
         </div>
       </article>
     </div>
@@ -507,7 +507,7 @@ accepted_body = """  <section class="page-section">
 (ROOT / "organizers.html").write_text(page(
     "Organizers — AABA4ET NeurIPS 2026", "organizers", organizers_body,
     hero_title="Organizers",
-    hero_lede="CMU · Keio · ServiceNow · Fujitsu",
+    hero_lede="Fujitsu · CMU · Keio · ServiceNow",
 ))
 
 (ROOT / "accepted-papers.html").write_text(page(
