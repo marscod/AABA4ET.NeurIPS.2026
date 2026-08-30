@@ -480,7 +480,7 @@ past_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">AAAI 2026 · Singapore</p>
       <h2>1st edition archive</h2>
-      <p class="lede">W8: Agentic AI Benchmarks and Applications for Enterprise Tasks · January 26, 2026 · Singapore EXPO. Content is hosted on the original Google Sites archive.</p>
+      <p class="lede">W8: Agentic AI Benchmarks and Applications for Enterprise Tasks · January 26, 2026 · Singapore</p>
       <div class="link-list">
         <div class="link-card">
           <strong>Overview</strong>
