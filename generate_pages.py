@@ -671,6 +671,16 @@ speakers_body = f"""  <section class="page-section">
 {social_icons(linkedin="https://www.linkedin.com/in/wei-peng-chen-882819a", scholar="https://scholar.google.com/citations?user=YBjteIQAAAAJ&hl=en")}
         </div>
       </article>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
+          {person_name("Furong Huang", "https://furong-huang.com/")}
+          <p class="role">Associate Professor, University of Maryland</p>
+          <p class="title-talk">Title: TBD</p>
+{social_icons("https://furong-huang.com/", "https://www.linkedin.com/in/furong-huang", "https://scholar.google.com/citations?user=13yyuCcAAAAJ&hl=en")}
+        </div>
+      </article>
     </div>
   </section>
 """
