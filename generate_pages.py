@@ -790,7 +790,6 @@ organizers_body = f"""  <section class="page-section">
       <h2>Technical Program Committee</h2>
       <div class="tbd-panel">
         <strong>TBD</strong>
-        <p class="muted">TPC members will be listed here.</p>
       </div>
     </div>
   </section>
