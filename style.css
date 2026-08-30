@@ -781,6 +781,19 @@ body.past-sub .page-hero__media {
 .committee-group .pc-list {
   margin-top: 0;
   grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.pc-list .sc-name {
+  display: block;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.pc-list .sc-role {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.12rem;
 }
 .tbd-panel {
   margin-top: 1.5rem;

@@ -86,6 +86,11 @@ def person_name(name: str, website: str | None = None) -> str:
     return f"<h3>{name}</h3>"
 
 
+def sc_li(name: str, role: str = "") -> str:
+    role_html = f'<span class="sc-role">{role}</span>' if role else ""
+    return f'            <li><span class="sc-name">{name}</span>{role_html}</li>'
+
+
 def page(title, active, body, *, prefix="", body_class="", hero_title="", hero_lede="", archive=False):
     css = f'{prefix}style.css'
     archive_html = ""
@@ -454,39 +459,57 @@ organizers_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Committees</p>
       <h2>Steering Committee</h2>
-      <p class="lede">The Steering Committee comprises the Organizing Committee plus the following members.</p>
       <div class="committee-groups">
+        <div class="committee-group">
+          <h3>Carnegie Mellon University</h3>
+          <ul class="pc-list">
+{sc_li("Graham Neubig", "Associate Professor")}
+{sc_li("Yonatan Bisk", "Assistant Professor")}
+{sc_li("Rosa Vitiello")}
+          </ul>
+        </div>
         <div class="committee-group">
           <h3>Fujitsu Ltd.</h3>
           <ul class="pc-list">
-            <li>Hiromichi Kobashi</li>
-            <li>Akiyoshi Uchida</li>
-            <li>Takuto Sato</li>
+{sc_li("Atsunori Moteki", "Senior Research Manager")}
+{sc_li("Hiromichi Kobashi", "Senior Project Director")}
+{sc_li("Akiyoshi Uchida", "Researcher")}
+{sc_li("Takuto Sato")}
+{sc_li("Jun Takahashi", "Principal Researcher")}
+{sc_li("Natsuki Miyahara", "Researcher")}
+{sc_li("Ryutaro Okada", "Manager")}
+{sc_li("Moyuru Yamada", "Principal Researcher")}
           </ul>
         </div>
         <div class="committee-group">
           <h3>Fujitsu Research of America, Inc.</h3>
           <ul class="pc-list">
-            <li>Kanji Uchino</li>
-            <li>Lei Liu</li>
-            <li>Mehdi Bahrami</li>
-            <li>Vardaan Pahuja</li>
+{sc_li("Kanji Uchino", "Research Director")}
+{sc_li("Lei Liu")}
+{sc_li("Mehdi Bahrami", "Senior Research Manager")}
+{sc_li("Vardaan Pahuja")}
           </ul>
         </div>
         <div class="committee-group">
-          <h3>Carnegie Mellon University</h3>
+          <h3>GK Software SE</h3>
           <ul class="pc-list">
-            <li>Rosa Vitiello</li>
+{sc_li("Pascal Singer", "Developer Data Science")}
+{sc_li("Jacqueline Tews", "Senior Manager Research and Development")}
+          </ul>
+        </div>
+        <div class="committee-group">
+          <h3>Keio University</h3>
+          <ul class="pc-list">
+{sc_li("Hideo Saito", "Professor")}
+          </ul>
+        </div>
+        <div class="committee-group">
+          <h3>ServiceNow</h3>
+          <ul class="pc-list">
+{sc_li("Alexandre Drouin", "Head of Frontier AI Research")}
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-  <section class="page-section">
-    <div class="wrap">
-      <p class="eyebrow">Review</p>
-      <h2>Program Committee</h2>
-      <p class="muted">Organizing Committee + Steering Committee + reviewers (to be listed).</p>
     </div>
   </section>
 """
