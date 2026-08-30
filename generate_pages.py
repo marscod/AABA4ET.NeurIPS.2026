@@ -1,12 +1,38 @@
 #!/usr/bin/env python3
 """Generate multi-page AABA4ET site with shared chrome."""
+from __future__ import annotations
+
+import json
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
+SITE_URL = "https://marscod.github.io/AABA4ET.NeurIPS.2026"
+SITE_NAME = "AABA4ET — NeurIPS 2026 Workshop"
+OG_IMAGE = f"{SITE_URL}/images/og-card.png"
+OPENREVIEW = "https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AABA4ET"
+DEFAULT_DESCRIPTION = (
+    "2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks — "
+    "NeurIPS 2026, Sydney. Where Agentic AI meets the real world of work."
+)
+KEYWORDS = (
+    "AABA4ET, NeurIPS 2026, agentic AI, enterprise AI, AI benchmarks, "
+    "multi-agent systems, workshop, Sydney"
+)
 FONTS = """  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />"""
 
+PAGES = [
+    ("", "Home", "Workshop overview, focus areas, and important dates."),
+    ("call-for-papers.html", "Call for Papers", "Submission guidelines, deadlines, and review process."),
+    ("speakers.html", "Speakers", "Invited speakers."),
+    ("panel.html", "Panel", "Industry and research panel."),
+    ("schedule.html", "Schedule", "Workshop day schedule."),
+    ("organizers.html", "Organizers", "Organizers and steering committee."),
+    ("accepted-papers.html", "Accepted Papers", "Accepted papers (after notifications)."),
+    ("past.html", "Past Workshop", "AAAI 2026 first-edition archive."),
+]
 
 def nav(active: str, prefix: str = "") -> str:
     def a(href, label, key):
@@ -20,7 +46,7 @@ def nav(active: str, prefix: str = "") -> str:
         <span class="nav-toggle__icon" aria-hidden="true"><i></i><i></i><i></i></span>
         Menu
       </button>
-      <nav class="site-nav" id="site-nav">
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
         {a("index.html", "Home", "home")}
         {a("call-for-papers.html", "CFP", "cfp")}
         {a("speakers.html", "Speakers", "speakers")}
@@ -37,7 +63,7 @@ def nav(active: str, prefix: str = "") -> str:
 def footer(prefix: str = "") -> str:
     return f"""  <footer class="site-footer">
     <div class="wrap">
-      <div class="site-footer__nav">
+      <div class="site-footer__nav" aria-label="Footer">
         <a href="{prefix}index.html">Home</a>
         <a href="{prefix}call-for-papers.html">CFP</a>
         <a href="{prefix}speakers.html">Speakers</a>
@@ -86,13 +112,139 @@ def person_name(name: str, website: str | None = None) -> str:
     return f"<h3>{name}</h3>"
 
 
-def sc_li(name: str, role: str = "") -> str:
-    role_html = f'<span class="sc-role">{role}</span>' if role else ""
-    return f'            <li><span class="sc-name">{name}</span>{role_html}</li>'
+def steering_card(name: str, affiliation: str, photo: str | None = None, title: str = "") -> str:
+    if photo:
+        media = (
+            f'<img class="steering-photo" src="{photo}" alt="{name}" '
+            f'width="88" height="88" loading="lazy" />'
+        )
+    else:
+        initials = "".join(p[0] for p in name.split() if p[:1].isalpha())[:2]
+        media = (
+            f'<span class="steering-photo steering-photo--placeholder" '
+            f'aria-hidden="true">{initials}</span>'
+        )
+    title_html = f'<p class="role">{title}</p>' if title else ""
+    return f"""      <article class="steering-card">
+        {media}
+        <h3>{name}</h3>
+        {title_html}
+        <p>{affiliation}</p>
+      </article>"""
 
 
-def page(title, active, body, *, prefix="", body_class="", hero_title="", hero_lede="", archive=False):
-    css = f'{prefix}style.css'
+STEERING = [
+    ("Graham Neubig", "Carnegie Mellon University", "images/organizers/neubig.jpg"),
+    ("Yonatan Bisk", "Carnegie Mellon University", "images/organizers/bisk.jpg"),
+    ("Rosa Vitiello", "Carnegie Mellon University", None),
+    ("Atsunori Moteki", "Fujitsu Ltd.", "images/organizers/moteki.jpg"),
+    ("Hiromichi Kobashi", "Fujitsu Ltd.", None),
+    ("Akiyoshi Uchida", "Fujitsu Ltd.", None),
+    ("Takuto Sato", "Fujitsu Ltd.", None),
+    ("Jun Takahashi", "Fujitsu Ltd.", None),
+    ("Natsuki Miyahara", "Fujitsu Ltd.", None),
+    ("Ryutaro Okada", "Fujitsu Ltd.", None),
+    ("Moyuru Yamada", "Fujitsu Ltd.", None),
+    ("Mehdi Bahrami", "Fujitsu Research of America, Inc.", "images/panelists/mehdi-bahrami.jpg"),
+    ("Kanji Uchino", "Fujitsu Research of America, Inc.", None),
+    ("Lei Liu", "Fujitsu Research of America, Inc.", None, "Senior Research Manager"),
+    ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", None, "Principal Researcher"),
+    ("Pascal Singer", "GK Software SE", None),
+    ("Jacqueline Tews", "GK Software SE", None),
+    ("Hideo Saito", "Keio University", "images/organizers/saito.jpg"),
+    ("Alexandre Drouin", "ServiceNow", "images/organizers/drouin.png"),
+]
+STEERING_GRID = "\n".join(steering_card(*row) for row in STEERING)
+
+
+def absolute_url(path: str = "") -> str:
+    return f"{SITE_URL}/{path}" if path else f"{SITE_URL}/"
+
+
+def json_ld(title: str, description: str, path: str = "", *, is_home: bool = False) -> str:
+    """Structured data for search engines and AI agents."""
+    url = absolute_url(path)
+    website = {
+        "@type": "WebSite",
+        "@id": f"{SITE_URL}/#website",
+        "name": SITE_NAME,
+        "url": f"{SITE_URL}/",
+        "description": DEFAULT_DESCRIPTION,
+        "inLanguage": "en",
+        "publisher": {"@type": "Organization", "name": "AABA4ET", "url": f"{SITE_URL}/"},
+    }
+    webpage = {
+        "@type": "WebPage",
+        "@id": f"{url}#webpage",
+        "url": url,
+        "name": title,
+        "description": description,
+        "isPartOf": {"@id": f"{SITE_URL}/#website"},
+        "about": {"@id": f"{SITE_URL}/#event"},
+        "primaryImageOfPage": {"@type": "ImageObject", "url": OG_IMAGE, "width": 1200, "height": 630},
+        "inLanguage": "en",
+    }
+    graph: list[dict] = [website, webpage]
+    if is_home:
+        event = {
+            "@type": "Event",
+            "@id": f"{SITE_URL}/#event",
+            "name": "2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET)",
+            "alternateName": ["AABA4ET", "AABA4ET NeurIPS 2026"],
+            "description": DEFAULT_DESCRIPTION,
+            "url": f"{SITE_URL}/",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "startDate": "2026-12-11",
+            "endDate": "2026-12-12",
+            "location": {
+                "@type": "Place",
+                "name": "NeurIPS 2026",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Sydney",
+                    "addressCountry": "AU",
+                },
+            },
+            "image": [OG_IMAGE],
+            "organizer": {
+                "@type": "Organization",
+                "name": "AABA4ET Organizers",
+                "url": f"{SITE_URL}/organizers.html",
+            },
+            "isAccessibleForFree": True,
+            "inLanguage": "en",
+            "keywords": KEYWORDS,
+            "offers": {
+                "@type": "Offer",
+                "url": OPENREVIEW,
+                "availability": "https://schema.org/InStock",
+                "validThrough": "2026-08-31",
+                "description": "Paper submissions via OpenReview through August 31, 2026 (AoE).",
+            },
+        }
+        graph = [website, event, webpage]
+    dumped = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
+    return f'  <script type="application/ld+json">\n{dumped}\n  </script>'
+
+
+def page(
+    title,
+    active,
+    body,
+    *,
+    prefix="",
+    body_class="",
+    hero_title="",
+    hero_lede="",
+    archive=False,
+    description=None,
+    path="",
+):
+    css = f"{prefix}style.css"
+    desc = description or DEFAULT_DESCRIPTION
+    url = absolute_url(path)
+    is_home = active == "home" and not path
     archive_html = ""
     if archive:
         archive_html = f"""  <div class="archive-banner">
@@ -114,18 +266,186 @@ def page(title, active, body, *, prefix="", body_class="", hero_title="", hero_l
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>{title}</title>
+  <meta name="description" content="{desc}" />
+  <meta name="keywords" content="{KEYWORDS}" />
+  <meta name="author" content="AABA4ET Organizers" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#0d7377" />
+  <link rel="canonical" href="{url}" />
+  <link rel="alternate" type="text/plain" title="LLM-friendly summary" href="{SITE_URL}/llms.txt" />
+  <meta property="og:site_name" content="{SITE_NAME}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="{title}" />
+  <meta property="og:description" content="{desc}" />
+  <meta property="og:url" content="{url}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{OG_IMAGE}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="AABA4ET NeurIPS 2026 Workshop — Sydney" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{title}" />
+  <meta name="twitter:description" content="{desc}" />
+  <meta name="twitter:image" content="{OG_IMAGE}" />
+  <meta name="twitter:image:alt" content="AABA4ET NeurIPS 2026 Workshop — Sydney" />
 {FONTS}
   <link rel="stylesheet" href="{css}" />
+{json_ld(title, desc, path, is_home=is_home)}
 </head>
 <body class="{body_class}">
+  <a class="skip-link" href="#main">Skip to main content</a>
 {nav(active, prefix)}
 {archive_html}
+<main id="main">
 {hero}
 {body}
+</main>
 {footer(prefix)}
 </body>
 </html>
 """
+
+
+def write_discovery_files() -> None:
+    """robots.txt, sitemap.xml, and llms.txt for crawlers and AI agents."""
+    today = date.today().isoformat()
+    robots = f"""# AABA4ET — NeurIPS 2026
+User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: {SITE_URL}/sitemap.xml
+"""
+    (ROOT / "robots.txt").write_text(robots)
+
+    url_entries = []
+    for path, _label, _blurb in PAGES:
+        loc = absolute_url(path)
+        priority = "1.0" if not path else ("0.9" if path == "call-for-papers.html" else "0.7")
+        changefreq = "weekly" if path in ("", "call-for-papers.html", "accepted-papers.html") else "monthly"
+        url_entries.append(
+            f"""  <url>
+    <loc>{loc}</loc>
+    <lastmod>{today}</lastmod>
+    <changefreq>{changefreq}</changefreq>
+    <priority>{priority}</priority>
+  </url>"""
+        )
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(url_entries)
+        + "\n</urlset>\n"
+    )
+    (ROOT / "sitemap.xml").write_text(sitemap)
+
+    page_lines = "\n".join(
+        f"- [{label}]({absolute_url(path)}): {blurb}" for path, label, blurb in PAGES
+    )
+    llms = f"""# AABA4ET — NeurIPS 2026 Workshop
+
+> 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks
+> NeurIPS 2026 · Sydney, Australia · December 11 or 12, 2026 (TBD)
+> Tagline: Where Agentic AI meets the real world of work
+
+This site is the canonical public homepage for the workshop.
+Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages site; prefer this URL for citations and sharing.
+
+## Key facts
+
+- Full name: 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET)
+- Conference: NeurIPS 2026 (follows the AAAI 2026 first edition in Singapore)
+- Location: Sydney, Australia
+- Workshop day: December 11 or 12, 2026 (TBD)
+- Format: In-person; non-archival; dual submission welcome; double-blind review
+- Paper length: 4 pages, NeurIPS style
+- Submission deadline: August 31, 2026 (Anywhere on Earth / AoE)
+- Acceptance notification: September 29, 2026
+- Submit: {OPENREVIEW}
+- OpenReview group: NeurIPS.cc/2026/Workshop/AABA4ET
+
+## Focus areas
+
+- Benchmarking and evaluation for enterprise agent tasks
+- Enterprise applications (planning, observation, reflection, system management)
+- Safety, trustworthiness, failure recovery, and distribution shift
+- Human–agent interaction in real workflows
+- Multimodal reasoning (vision, text, audio)
+- Multi-agent planning and orchestration
+
+## Pages
+
+{page_lines}
+
+## Machine-readable
+
+- Sitemap: {SITE_URL}/sitemap.xml
+- Robots: {SITE_URL}/robots.txt
+- Full agent brief: {SITE_URL}/llms-full.txt
+- Open Graph image: {OG_IMAGE}
+- Canonical site: {SITE_URL}/
+
+## Citation hint
+
+When referring to this workshop, use the canonical URL {SITE_URL}/ and the short name AABA4ET (NeurIPS 2026).
+"""
+    (ROOT / "llms.txt").write_text(llms)
+
+    llms_full = llms + """
+## About
+
+The workshop fosters collaboration toward robust, efficient, and trustworthy Agentic AI for complex, dynamic enterprise operations. It connects cutting-edge agent research with practical evaluation and real-world deployment.
+
+## Important dates (AoE)
+
+| Date | Milestone |
+|------|-----------|
+| Aug 31, 2026 | Submission deadline |
+| Sep 29, 2026 | Acceptance notification |
+| Dec 11–12, 2026 | Workshop day (TBD) |
+
+## Related
+
+- Past workshop (AAAI 2026): https://sites.google.com/view/aaba4et/past-workshop
+- NeurIPS paper template: https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip
+"""
+    (ROOT / "llms-full.txt").write_text(llms_full)
 
 
 # —— Home ——
@@ -459,56 +779,18 @@ organizers_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Committees</p>
       <h2>Steering Committee</h2>
-      <div class="committee-groups">
-        <div class="committee-group">
-          <h3>Carnegie Mellon University</h3>
-          <ul class="pc-list">
-{sc_li("Graham Neubig", "Associate Professor")}
-{sc_li("Yonatan Bisk", "Assistant Professor")}
-{sc_li("Rosa Vitiello")}
-          </ul>
-        </div>
-        <div class="committee-group">
-          <h3>Fujitsu Ltd.</h3>
-          <ul class="pc-list">
-{sc_li("Atsunori Moteki", "Senior Research Manager")}
-{sc_li("Hiromichi Kobashi", "Senior Project Director")}
-{sc_li("Akiyoshi Uchida", "Researcher")}
-{sc_li("Takuto Sato")}
-{sc_li("Jun Takahashi", "Principal Researcher")}
-{sc_li("Natsuki Miyahara", "Researcher")}
-{sc_li("Ryutaro Okada", "Manager")}
-{sc_li("Moyuru Yamada", "Principal Researcher")}
-          </ul>
-        </div>
-        <div class="committee-group">
-          <h3>Fujitsu Research of America, Inc.</h3>
-          <ul class="pc-list">
-{sc_li("Kanji Uchino", "Research Director")}
-{sc_li("Lei Liu")}
-{sc_li("Mehdi Bahrami", "Senior Research Manager")}
-{sc_li("Vardaan Pahuja")}
-          </ul>
-        </div>
-        <div class="committee-group">
-          <h3>GK Software SE</h3>
-          <ul class="pc-list">
-{sc_li("Pascal Singer", "Developer Data Science")}
-{sc_li("Jacqueline Tews", "Senior Manager Research and Development")}
-          </ul>
-        </div>
-        <div class="committee-group">
-          <h3>Keio University</h3>
-          <ul class="pc-list">
-{sc_li("Hideo Saito", "Professor")}
-          </ul>
-        </div>
-        <div class="committee-group">
-          <h3>ServiceNow</h3>
-          <ul class="pc-list">
-{sc_li("Alexandre Drouin", "Head of Frontier AI Research")}
-          </ul>
-        </div>
+      <div class="steering-grid">
+{STEERING_GRID}
+      </div>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">Review</p>
+      <h2>Technical Program Committee</h2>
+      <div class="tbd-panel">
+        <strong>TBD</strong>
+        <p class="muted">TPC members will be listed here.</p>
       </div>
     </div>
   </section>
@@ -567,43 +849,56 @@ past_body = f"""  <section class="page-section">
 
 # Write files
 (ROOT / "index.html").write_text(page(
-    "AABA4ET — NeurIPS 2026 Workshop", "home", home_body, body_class="home"
+    "AABA4ET — NeurIPS 2026 Workshop", "home", home_body, body_class="home",
+    description=DEFAULT_DESCRIPTION,
 ))
 
 (ROOT / "call-for-papers.html").write_text(page(
     "Call for Papers — AABA4ET NeurIPS 2026", "cfp", cfp_body,
     hero_title="Call for Papers",
     hero_lede="4 pages · NeurIPS 2026 style · double-blind · non-archival",
+    path="call-for-papers.html",
+    description="Submit to AABA4ET at NeurIPS 2026: 4 pages, double-blind, non-archival. Deadline August 31, 2026 (AoE).",
 ))
 
 (ROOT / "speakers.html").write_text(page(
     "Speakers — AABA4ET NeurIPS 2026", "speakers", speakers_body,
     hero_title="Speakers",
     hero_lede="Invited talks at NeurIPS 2026 in Sydney",
+    path="speakers.html",
+    description="Invited speakers for the AABA4ET NeurIPS 2026 workshop in Sydney.",
 ))
 
 (ROOT / "panel.html").write_text(page(
     "Panel — AABA4ET NeurIPS 2026", "panel", panel_body,
     hero_title="Panel",
     hero_lede="Industry and research perspectives on agentic AI for enterprise",
+    path="panel.html",
+    description="Industry and research panel on agentic AI for enterprise at AABA4ET NeurIPS 2026.",
 ))
 
 (ROOT / "schedule.html").write_text(page(
     "Schedule — AABA4ET NeurIPS 2026", "schedule", schedule_body,
     hero_title="Schedule",
     hero_lede="December 11 or 12, 2026 · Sydney, Australia",
+    path="schedule.html",
+    description="Workshop schedule for AABA4ET at NeurIPS 2026 — December 11 or 12, Sydney.",
 ))
 
 (ROOT / "organizers.html").write_text(page(
     "Organizers — AABA4ET NeurIPS 2026", "organizers", organizers_body,
     hero_title="Organizers",
     hero_lede="CMU · Fujitsu · Keio · ServiceNow",
+    path="organizers.html",
+    description="Organizers and steering committee for AABA4ET NeurIPS 2026.",
 ))
 
 (ROOT / "accepted-papers.html").write_text(page(
     "Accepted Papers — AABA4ET NeurIPS 2026", "accepted", accepted_body,
     hero_title="Accepted Papers",
     hero_lede="Coming after September 29, 2026 notifications",
+    path="accepted-papers.html",
+    description="Accepted papers for AABA4ET NeurIPS 2026 (list after September 29 notifications).",
 ))
 
 (ROOT / "past.html").write_text(page(
@@ -611,6 +906,9 @@ past_body = f"""  <section class="page-section">
     body_class="past",
     hero_title="Past Workshop",
     hero_lede="AAAI 2026 · 1st edition · Singapore",
+    path="past.html",
+    description="Archive of the 1st AABA4ET workshop at AAAI 2026 in Singapore.",
 ))
 
+write_discovery_files()
 print("Generated pages OK")

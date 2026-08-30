@@ -1,0 +1,53 @@
+# AABA4ET — NeurIPS 2026 Workshop
+
+> 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks
+> NeurIPS 2026 · Sydney, Australia · December 11 or 12, 2026 (TBD)
+> Tagline: Where Agentic AI meets the real world of work
+
+This site is the canonical public homepage for the workshop.
+Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages site; prefer this URL for citations and sharing.
+
+## Key facts
+
+- Full name: 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET)
+- Conference: NeurIPS 2026 (follows the AAAI 2026 first edition in Singapore)
+- Location: Sydney, Australia
+- Workshop day: December 11 or 12, 2026 (TBD)
+- Format: In-person; non-archival; dual submission welcome; double-blind review
+- Paper length: 4 pages, NeurIPS style
+- Submission deadline: August 31, 2026 (Anywhere on Earth / AoE)
+- Acceptance notification: September 29, 2026
+- Submit: https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AABA4ET
+- OpenReview group: NeurIPS.cc/2026/Workshop/AABA4ET
+
+## Focus areas
+
+- Benchmarking and evaluation for enterprise agent tasks
+- Enterprise applications (planning, observation, reflection, system management)
+- Safety, trustworthiness, failure recovery, and distribution shift
+- Human–agent interaction in real workflows
+- Multimodal reasoning (vision, text, audio)
+- Multi-agent planning and orchestration
+
+## Pages
+
+- [Home](https://marscod.github.io/AABA4ET.NeurIPS.2026/): Workshop overview, focus areas, and important dates.
+- [Call for Papers](https://marscod.github.io/AABA4ET.NeurIPS.2026/call-for-papers.html): Submission guidelines, deadlines, and review process.
+- [Speakers](https://marscod.github.io/AABA4ET.NeurIPS.2026/speakers.html): Invited speakers.
+- [Panel](https://marscod.github.io/AABA4ET.NeurIPS.2026/panel.html): Industry and research panel.
+- [Schedule](https://marscod.github.io/AABA4ET.NeurIPS.2026/schedule.html): Workshop day schedule.
+- [Organizers](https://marscod.github.io/AABA4ET.NeurIPS.2026/organizers.html): Organizers and steering committee.
+- [Accepted Papers](https://marscod.github.io/AABA4ET.NeurIPS.2026/accepted-papers.html): Accepted papers (after notifications).
+- [Past Workshop](https://marscod.github.io/AABA4ET.NeurIPS.2026/past.html): AAAI 2026 first-edition archive.
+
+## Machine-readable
+
+- Sitemap: https://marscod.github.io/AABA4ET.NeurIPS.2026/sitemap.xml
+- Robots: https://marscod.github.io/AABA4ET.NeurIPS.2026/robots.txt
+- Full agent brief: https://marscod.github.io/AABA4ET.NeurIPS.2026/llms-full.txt
+- Open Graph image: https://marscod.github.io/AABA4ET.NeurIPS.2026/images/og-card.png
+- Canonical site: https://marscod.github.io/AABA4ET.NeurIPS.2026/
+
+## Citation hint
+
+When referring to this workshop, use the canonical URL https://marscod.github.io/AABA4ET.NeurIPS.2026/ and the short name AABA4ET (NeurIPS 2026).

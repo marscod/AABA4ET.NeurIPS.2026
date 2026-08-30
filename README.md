@@ -6,6 +6,21 @@ Static multi-page site for the 2nd Workshop on Agentic AI Benchmarks and Applica
 
 https://marscod.github.io/AABA4ET.NeurIPS.2026/
 
+**Share this GitHub Pages URL on LinkedIn** (not the Google Sites embed URL). Open Graph tags and `images/og-card.png` power link previews. After deploy, refresh cache with [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/).
+
+### SEO & AI agents
+
+Every page includes canonical URL, meta description, Open Graph / Twitter cards, and JSON-LD (`WebSite` / `WebPage`; home also has `Event`). Discovery files:
+
+| File | Purpose |
+|------|---------|
+| `/robots.txt` | Allows search + AI crawlers; points to sitemap |
+| `/sitemap.xml` | All public pages |
+| `/llms.txt` | Short agent-readable workshop brief |
+| `/llms-full.txt` | Extended brief with dates table |
+
+Prefer citing `https://marscod.github.io/AABA4ET.NeurIPS.2026/` over the Google Sites mirror.
+
 ### Pages
 
 | Page | URL path |
