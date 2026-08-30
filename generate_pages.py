@@ -453,9 +453,40 @@ organizers_body = f"""  <section class="page-section">
   <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Committees</p>
-      <h2>Steering &amp; program</h2>
-      <p class="muted" style="margin-bottom:1rem">Steering Committee: Organizing Committee + additional members (to be listed).</p>
-      <p class="muted">Program Committee: Organizing Committee + Steering Committee + reviewers (to be listed).</p>
+      <h2>Steering Committee</h2>
+      <p class="lede">The Steering Committee comprises the Organizing Committee plus the following members.</p>
+      <div class="committee-groups">
+        <div class="committee-group">
+          <h3>Fujitsu Ltd.</h3>
+          <ul class="pc-list">
+            <li>Hiromichi Kobashi</li>
+            <li>Akiyoshi Uchida</li>
+            <li>Takuto Sato</li>
+          </ul>
+        </div>
+        <div class="committee-group">
+          <h3>Fujitsu Research of America, Inc.</h3>
+          <ul class="pc-list">
+            <li>Kanji Uchino</li>
+            <li>Lei Liu</li>
+            <li>Mehdi Bahrami</li>
+            <li>Vardaan Pahuja</li>
+          </ul>
+        </div>
+        <div class="committee-group">
+          <h3>Carnegie Mellon University</h3>
+          <ul class="pc-list">
+            <li>Rosa Vitiello</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">Review</p>
+      <h2>Program Committee</h2>
+      <p class="muted">Organizing Committee + Steering Committee + reviewers (to be listed).</p>
     </div>
   </section>
 """

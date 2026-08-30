@@ -763,6 +763,25 @@ body.past-sub .page-hero__media {
   font-size: 0.92rem;
   color: var(--ink-soft);
 }
+.committee-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.75rem 2rem;
+  margin-top: 1.75rem;
+}
+.committee-group h3 {
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.committee-group .pc-list {
+  margin-top: 0;
+  grid-template-columns: 1fr;
+}
 .tbd-panel {
   margin-top: 1.5rem;
   padding: 2rem 0;
