@@ -148,7 +148,7 @@ STEERING = [
     ("Mehdi Bahrami", "Fujitsu Research of America, Inc.", "images/panelists/mehdi-bahrami.jpg"),
     ("Kanji Uchino", "Fujitsu Research of America, Inc.", None),
     ("Lei Liu", "Fujitsu Research of America, Inc.", None, "Senior Research Manager"),
-    ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", None, "Principal Researcher"),
+    ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", "images/organizers/vardaan.jpg", "Principal Researcher"),
     ("Pascal Singer", "GK Software SE", None),
     ("Jacqueline Tews", "GK Software SE", None),
     ("Hideo Saito", "Keio University", "images/organizers/saito.jpg"),
@@ -655,9 +655,9 @@ speakers_body = f"""  <section class="page-section">
         <img class="person-photo" src="images/speakers/yu-su.jpg" alt="Yu Su" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Yu Su", "https://ysu1989.github.io/")}
-          <p class="role">Associate Professor, Computer Science and Engineering, Ohio State University</p>
+          <p class="role">Associate Professor, Ohio State University · Co-founder and CEO, NeoCognition</p>
           <p class="title-talk">Title: TBD</p>
-          <p>Yu Su is an Associate Professor in the Department of Computer Science and Engineering at the Ohio State University and a College of Engineering Innovation Scholar. Before coming to OSU, he was Senior Researcher at Microsoft Semantic Machines working on conversational AI. He received his PhD from University of California, Santa Barbara and his bachelor’s degree from Tsinghua University, both in Computer Science. His awards include the Outstanding Dissertation Award from UCSB and Best of IEEE ICDM 2019 Selection. His expertise includes natural language processing, artificial intelligence, conversational AI, and knowledge bases.</p>
+          <p>Yu Su is Associate Professor at the Ohio State University and Co-founder and CEO at NeoCognition. He is known for his research and thought leadership on language agents, with a series of early work that helped shape the modern agent field. He is a recipient of the Sloan Research Fellowship, NSF CAREER Award, and multiple paper awards from premier AI venues.</p>
 {social_icons("https://ysu1989.github.io/", "https://www.linkedin.com/in/ysu1989", "https://scholar.google.com/citations?user=rIh5OqoAAAAJ&hl=en")}
         </div>
       </article>
