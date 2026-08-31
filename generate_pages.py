@@ -147,7 +147,7 @@ STEERING = [
     ("Moyuru Yamada", "Fujitsu Ltd.", None),
     ("Mehdi Bahrami", "Fujitsu Research of America, Inc.", "images/panelists/mehdi-bahrami.jpg"),
     ("Kanji Uchino", "Fujitsu Research of America, Inc.", None),
-    ("Lei Liu", "Fujitsu Research of America, Inc.", None, "Senior Research Manager"),
+    ("Lei Liu", "Fujitsu Research of America, Inc.", "images/organizers/Lei-Liu.jpg", "Senior Research Manager"),
     ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", "images/organizers/vardaan.jpg", "Principal Researcher"),
     ("Pascal Singer", "GK Software SE", None),
     ("Jacqueline Tews", "GK Software SE", None),
