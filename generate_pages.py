@@ -652,7 +652,7 @@ speakers_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <img class="person-photo" src="images/speakers/yu-su.jpg" alt="Yu Su" width="160" height="160" loading="lazy" />
+        <img class="person-photo" src="images/speakers/YuSu.jpeg" alt="Yu Su" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Yu Su", "https://ysu1989.github.io/")}
           <p class="role">Associate Professor, Ohio State University · Co-founder and CEO, NeoCognition</p>
