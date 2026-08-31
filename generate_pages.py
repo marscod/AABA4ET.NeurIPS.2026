@@ -23,6 +23,13 @@ FONTS = """  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />"""
 
+def asset_href(name: str, prefix: str = "") -> str:
+    """Query-string version from file mtime so CSS/JS are not served stale."""
+    path = ROOT / name
+    ver = int(path.stat().st_mtime) if path.exists() else 0
+    return f"{prefix}{name}?{ver}"
+
+
 PAGES = [
     ("", "Home", "Workshop overview, focus areas, and important dates."),
     ("call-for-papers.html", "Call for Papers", "Submission guidelines, deadlines, and review process."),
@@ -76,7 +83,7 @@ def footer(prefix: str = "") -> str:
       <p>2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks · NeurIPS 2026 · Sydney</p>
     </div>
   </footer>
-  <script src="{prefix}script.js"></script>"""
+  <script src="{asset_href("script.js", prefix)}"></script>"""
 
 
 ICON_WEB = """<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>"""
@@ -241,7 +248,7 @@ def page(
     description=None,
     path="",
 ):
-    css = f"{prefix}style.css"
+    css = asset_href("style.css", prefix)
     desc = description or DEFAULT_DESCRIPTION
     url = absolute_url(path)
     is_home = active == "home" and not path

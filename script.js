@@ -1,5 +1,29 @@
 /* Mobile nav + topic reveal */
 (function () {
+  // GitHub Pages / browser cache often reuse HTML. Bust it on in-site clicks:
+  // speakers.html → speakers.html?131
+  document.addEventListener(
+    "click",
+    (e) => {
+      const a = e.target.closest("a[href]");
+      if (!a) return;
+      const raw = a.getAttribute("href");
+      if (!raw || raw.startsWith("#") || /^(mailto|tel|javascript):/i.test(raw)) return;
+      if (a.hasAttribute("download")) return;
+      let url;
+      try {
+        url = new URL(a.href);
+      } catch {
+        return;
+      }
+      if (url.origin !== location.origin) return;
+      if (/\.(css|js|png|jpe?g|gif|webp|svg|pdf|xml|txt)$/i.test(url.pathname)) return;
+      url.search = String(Math.floor(Math.random() * 1e9));
+      a.setAttribute("href", url.pathname + url.search + url.hash);
+    },
+    true
+  );
+
   const toggle = document.querySelector(".nav-toggle");
   const nav = document.querySelector(".site-nav");
 
