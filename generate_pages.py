@@ -663,11 +663,12 @@ speakers_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="images/speakers/wei-peng_chen.jpeg" alt="Wei-Peng Chen" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Wei-Peng Chen")}
           <p class="role">Research Director, Fujitsu Research of America, Inc.</p>
           <p class="title-talk">Title: TBD</p>
+          <p>Dr. Wei-Peng Chen is a Research Director at Fujitsu Research of America. His research interests include Machine Learning, Natural Language Processing, Optimization, Software Engineering, Internet of Things, and Wireless Communications. He is a Senior Member of IEEE and ACM. He published 60+ journal or conference papers and was granted more than 130 US patents.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/wei-peng-chen-882819a", scholar="https://scholar.google.com/citations?user=YBjteIQAAAAJ&hl=en")}
         </div>
       </article>
