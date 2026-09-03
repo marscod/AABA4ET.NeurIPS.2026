@@ -143,7 +143,7 @@ def steering_card(name: str, affiliation: str, photo: str | None = None, title: 
 STEERING = [
     ("Graham Neubig", "Carnegie Mellon University", "images/organizers/neubig.jpg"),
     ("Yonatan Bisk", "Carnegie Mellon University", "images/organizers/bisk.jpg"),
-    ("Rosa Vitiello", "Carnegie Mellon University", None),
+    ("Rosa Vitiello", "Carnegie Mellon University", "images/organizers/rosa.jpg"),
     ("Atsunori Moteki", "Fujitsu Ltd.", "images/organizers/moteki.jpg"),
     ("Hiromichi Kobashi", "Fujitsu Ltd.", None),
     ("Akiyoshi Uchida", "Fujitsu Ltd.", None),
