@@ -712,6 +712,15 @@ panel_body = f"""  <section class="page-section">
 {social_icons("https://cloudlab.ucmerced.edu/~mehdi-bahrami", "https://www.linkedin.com/in/mehdi-bahrami-cs", "https://scholar.google.com/citations?user=xAGN8vcAAAAJ&hl=en")}
         </div>
       </article>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
+          {person_name("Maarten Van Segbroeck")}
+          <p class="role">Director of Research, NVIDIA</p>
+{social_icons(linkedin="https://www.linkedin.com/in/mvansegb", scholar="https://scholar.google.com/citations?user=XJ2L4LsAAAAJ&hl=en")}
+        </div>
+      </article>
     </div>
   </section>
 """
