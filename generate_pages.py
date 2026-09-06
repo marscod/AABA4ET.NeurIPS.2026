@@ -716,6 +716,15 @@ panel_body = f"""  <section class="page-section">
       <article class="person-full speaker">
         <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
         <div class="person-copy">
+          {person_name("Shivam Patel")}
+          <p class="role">OpenAI</p>
+{social_icons(linkedin="https://www.linkedin.com/in/shivamwhohelps")}
+        </div>
+      </article>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
           {person_name("Maarten Van Segbroeck")}
           <p class="role">Director of Research, NVIDIA</p>
 {social_icons(linkedin="https://www.linkedin.com/in/mvansegb", scholar="https://scholar.google.com/citations?user=XJ2L4LsAAAAJ&hl=en")}
