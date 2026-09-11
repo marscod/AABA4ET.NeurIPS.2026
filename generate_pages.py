@@ -723,10 +723,11 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="images/panelists/maarten-van-segbroeck.png" alt="Maarten Van Segbroeck" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Maarten Van Segbroeck")}
           <p class="role">Director of Research, NVIDIA</p>
+          <p>Maarten Van Segbroeck is director of research at NVIDIA, where he leads initiatives at the intersection of synthetic data, privacy, and trustworthy AI. His team develops methods and evaluation frameworks that enable organizations to safely generate, assess, and deploy high-quality synthetic datasets for advanced AI systems. Before joining NVIDIA, Maarten was VP of applied science at Gretel, helping enterprises adopt synthetic data solutions across regulated domains. He previously drove research efforts at Amazon across AWS and Alexa AI. Maarten holds a Ph.D. in electrical engineering from KU Leuven and completed postdoctoral research at the University of Southern California.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/mvansegb", scholar="https://scholar.google.com/citations?user=XJ2L4LsAAAAJ&hl=en")}
         </div>
       </article>
