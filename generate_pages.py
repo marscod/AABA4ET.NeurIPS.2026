@@ -2,6 +2,7 @@
 """Generate multi-page AABA4ET site with shared chrome."""
 from __future__ import annotations
 
+import html
 import json
 from datetime import date
 from pathlib import Path
@@ -36,7 +37,7 @@ PAGES = [
     ("speakers.html", "Speakers", "Invited speakers."),
     ("panel.html", "Panel", "Industry and research panel."),
     ("schedule.html", "Schedule", "Workshop day schedule."),
-    ("organizers.html", "Organizers", "Organizers and steering committee."),
+    ("organizers.html", "Organizers", "Organizers, steering committee, and technical program committee."),
     ("accepted-papers.html", "Accepted Papers", "Accepted papers (after notifications)."),
     ("past.html", "Past Workshop", "AAAI 2026 first-edition archive."),
 ]
@@ -91,6 +92,15 @@ ICON_WEB = """<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke
 ICON_LI = """<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>"""
 
 ICON_GS = """<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/></svg>"""
+
+ICON_CALENDAR = """<svg class="date-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/><circle cx="8" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="16" r="1" fill="currentColor" stroke="none"/></svg>"""
+
+WORKSHOP_DATE_ITEM = f"""        <div class="date-item date-item--confirmed">
+          <span class="date-item__badge">Confirmed</span>
+          {ICON_CALENDAR}
+          <strong>Dec 11, 2026</strong>
+          <span>Workshop day</span>
+        </div>"""
 
 
 def social_icons(
@@ -157,6 +167,172 @@ STEERING = [
 ]
 STEERING_GRID = "\n".join(steering_card(*row) for row in STEERING)
 
+TPC = [
+    ("Abhay Puri", "ServiceNow Research"),
+    ("Abhigya Verma", "ServiceNow Inc"),
+    ("Abhishek Malvankar", "IBM TJ Watson Research Center"),
+    ("Akazaki Takumi", "Fujitsu Limited"),
+    ("Akhil Kasturi", "University of Rochester"),
+    ("Akira Ura", "Fujitsu Limited"),
+    ("Akiyoshi Uchida", "Fujitsu Limited"),
+    ("Alexander Gurung", "University of Edinburgh"),
+    ("Alina Hyk", "Oregon State University"),
+    ("An Cao", "BMO Capital Markets"),
+    ("Andrew Robert Williams", "Université de Montréal"),
+    ("Aniket Singh", "University of California, San Diego"),
+    ("Anirban Poddar", "Facebook"),
+    ("Ankush Agarwal", "Fujitsu Research of India Pvt. Ltd."),
+    ("Anuj Ahluwalia", "ServiceNow Inc"),
+    ("Arjun Ashok", "Google"),
+    ("Armaan Sandhu", "University of Massachusetts at Amherst"),
+    ("Ashish Jain", "Sarvam AI"),
+    ("Assaf Natanzon", "Eon.io"),
+    ("Athira Gopal", "QPIAI"),
+    ("Biplob Biswas", "Fujitsu Research of America, Inc."),
+    ("Changjia Chen", "BMO Capital Markets"),
+    ("Changyo Han", "The University of Tokyo"),
+    ("Davi Baccan", "Universidade de Coimbra"),
+    ("Dev Utkarsh Pal", "Indraprastha Institute of Information Technology, Delhi"),
+    ("Dipin Khati", "College of William and Mary"),
+    ("Dongchan Shin", "Mila - Quebec Artificial Intelligence Institute"),
+    ("Ekagra Gupta", "Arizona State University"),
+    ("Esakkivel Esakkiraja", "ServiceNow Inc"),
+    ("Fatemeh Pesaran Zadeh", "Seoul National University"),
+    ("Ganesh S", "Fujitsu Research of India Pvt. Ltd."),
+    ("Gundeep Singh", "Dialpad"),
+    ("Gunin Gupta", "Ritivel Labs Inc."),
+    ("Gustav Olaf Yunus Laitinen-Fredriksson Lundstrom-Imanov", "Metropolia University of Applied Sciences"),
+    ("Haris Javed", "Boston Scientific Corporation"),
+    ("Harsh Vishwakarma", "Fujitsu Research of India Pvt. Ltd."),
+    ("Harshit Gupta", "SpendSide"),
+    ("Haruki Yokoyama", "Fujitsu Limited"),
+    ("Hiroaki Fujimoto", "Fujitsu Limited"),
+    ("Hiroaki Iwashita", "Fujitsu Limited"),
+    ("Hiroaki Murakami", "The University of Tokyo, Tokyo Institute of Technology"),
+    ("Hisanao Akima", "Fujitsu Limited"),
+    ("Imene Kerboua", "INSA Lyon, LIRIS"),
+    ("Issam H. Laradji", "ServiceNow"),
+    ("Jamiu Idowu", "University College London, University of London"),
+    ("Jayesh Rathi", "The Bank of New York"),
+    ("Jeffrey Willette", "NVIDIA"),
+    ("Jeremiah Giordani", "Longitude Labs"),
+    ("Jesica Bauer", "Fujitsu Research of America, Inc."),
+    ("Jiaqi Deng", "University of Southern California"),
+    ("Jonathan Taws", "Amazon"),
+    ("Jongwon Choi", "Chung-Ang University"),
+    ("Joshua Anojulu", "University of North Texas"),
+    ("Junki Oura", "Fujitsu Limited"),
+    ("Kang Li", "Atlassian Corporation"),
+    ("Kanji Uchino", "Fujitsu Research of America, Inc."),
+    ("Kazuki Takahashi", "The University of Tokyo"),
+    ("Keegan Wang", "CMU, Carnegie Mellon University"),
+    ("Keisuke Miyazaki", "Fujitsu Limited"),
+    ("Kenichirou Narita", "Fujitsu Limited"),
+    ("Kesava Prasad Sanjivi Arul", "Bosch"),
+    ("Kevin Musgrave", "Fujitsu Research of America, Inc."),
+    ("Khyati Mahajan", "ServiceNow Inc"),
+    ("Kosaku Kimura", "Fujitsu Limited"),
+    ("Koudai Toyota", "Fujitsu Limited"),
+    ("Koushik Viswanadha", "CMU, Carnegie Mellon University"),
+    ("Kyeongryeol Go", "Superb AI"),
+    ("Lanchen Song", "Distyl AI"),
+    ("Lei Liu", "Fujitsu Research of America, Inc."),
+    ("Lichi Li", "Cisco Systems, Inc."),
+    ("Lily Bharati Sharma", "Tata Consultancy Services Limited, India"),
+    ("Lin Ai", "Microsoft"),
+    ("Lisa Rossgoderer", "Infineon Technologies AG"),
+    ("Léo Boisvert", "École Polytechnique de Montréal, Université de Montréal"),
+    ("Manuel Brack", "Adobe Systems"),
+    ("Marc-Etienne Brunet", "ServiceNow"),
+    ("Maria Ana Cardei", "University of Virginia"),
+    ("Mariko Sugawara", "Fujitsu Limited"),
+    ("Mario Michael Krell", "DoorDash"),
+    ("Masahiko Sugimura", "Fujitsu Limited"),
+    ("Masaru Ueno", "Fujitsu Limited"),
+    ("Masato Sakata", "Fujitsu Limited"),
+    ("MD SHARIQ FARHAN", "Uber"),
+    ("Mehdi Bahrami", "Fujitsu Research of America, Sunnyvale, CA"),
+    ("Mengxi luo", "BMO Capital Markets"),
+    ("Mohammad Ramezanali", "SalesForce.com"),
+    ("Monojit Banerjee", "SalesForce.com"),
+    ("Moritz Pötzsch", "Technical University of Munich"),
+    ("Mukunda Kurukundi Das", "The Bank of New York"),
+    ("Nicholas Goutermout", "ServiceNow Inc"),
+    ("Niharika singh", "QpiAI India Pvt. Ltd."),
+    ("Norimasa Kobori", "Mercari, Inc"),
+    ("Patrice Bechard", "ServiceNow"),
+    ("Pattaraphon Kenny Wongchamcharoen", "University of California, Berkeley"),
+    ("Peiying Zhu", "Blossom AI"),
+    ("Pierre-Andre Noel", "ServiceNow"),
+    ("Pradeep Nallathambi", "The Bank of New York"),
+    ("Pranoy Panda", "Fujitsu Research of India Pvt. Ltd."),
+    ("Preetam Keshari Nahak", "Client Focus LLC"),
+    ("Prith Sharma", "CMU, Carnegie Mellon University"),
+    ("Ramcharan Kakarla", "University of California, Los Angeles"),
+    ("Rana Muhammad Shahroz Khan", "Department of Computer Science, University of North Carolina at Chapel Hill"),
+    ("Rohan Kulkarni", "Meta"),
+    ("Rongzhe Wei", "Georgia Institute of Technology"),
+    ("Rui Yang", "Huawei Technologies Ltd."),
+    ("Ryo Hachiuma", "NVIDIA"),
+    ("Sagar Davasam", "ServiceNow Inc"),
+    ("Sainadh Ainala", "ServiceNow Inc"),
+    ("Sarita A Joshi", "Google"),
+    ("Satoru Takahashi", "Fujitsu Limited"),
+    ("Satoshi Munakata", "Fujitsu Limited"),
+    ("Sebastien Paquet", "ServiceNow Inc"),
+    ("Shailaja Keyur Sampat", "Fujitsu Research of America, Inc."),
+    ("Shigeki Fukuta", "Fujitsu Limited"),
+    ("Shiva Krishna Reddy Malay", "ServiceNow Inc"),
+    ("Sho Takemori", "Fujitsu Limited"),
+    ("Shogo Tokui", "Fujitsu Limited"),
+    ("Shoichi Masui", "Agent Research Collective"),
+    ("Sidi Chang", "Blossom AI Labs"),
+    ("Siqi Peng", "Fujitsu Limited"),
+    ("Sriram Gutlapalli", "University of North Florida"),
+    ("Sruthi Pisipati", "Boston Scientific Corporation"),
+    ("Suraj Mahadev Nagaje", "Fujitsu Research of India Pvt. Ltd."),
+    ("Susumu Tokumoto", "Fujitsu Limited"),
+    ("Taiki Sekii", "CyberAgent, Inc."),
+    ("Takao Nakagawa", "Fujitsu Limited"),
+    ("Takasaburo Fukuda", "Fujitsu Limited"),
+    ("Takashi Kato", "Fujitsu Limited"),
+    ("Taku Fukui", "Fujitsu Limited"),
+    ("Takumi Ayukawa", "Fujitsu Limited"),
+    ("Takuto Sato", "Fujitsu Limited"),
+    ("Taro Togawa", "Fujitsu Limited"),
+    ("Tatsuya Asai", "Fujitsu Limited"),
+    ("Tianyi Chen", "ServiceNow Inc"),
+    ("Trishala Jayesh Ahalpara", "Fujitsu Research of America, Inc."),
+    ("Tulika Manoj Awalgaonkar", "SalesForce.com"),
+    ("Valentino Sacco", 'University of Roma "La Sapienza"'),
+    ("Vardaan Pahuja", "Fujitsu Research of America, Inc."),
+    ("Vartika Sengar", "Fujitsu Research of India Pvt. Ltd."),
+    ("Wei-Peng Chen", "Fujitsu Research of America, Inc."),
+    ("Willy Fitra Hendria", "Lunit Inc."),
+    ("Yangyue Wang", "Fig"),
+    ("Yasufumi Tochiori", "Fujitsu Limited"),
+    ("Yasuhiko Kondo", "Fujitsu Limited"),
+    ("Yasunari Hikima", "Fujitsu Limited"),
+    ("Yongjin Yang", "University of Toronto"),
+    ("Yoshihiro Kawahara", "The University of Tokyo"),
+    ("Yoshihiro Okawa", "Fujitsu Limited"),
+    ("Yueting Li", "University of California, Berkeley"),
+    ("Yuji Mizobuchi", "Fujitsu Limited"),
+    ("Zeyuan Li", "Massachusetts Institute of Technology"),
+    ("Zhenyu Zhang", "Amazon"),
+]
+
+
+def tpc_list(members: list[tuple[str, str]]) -> str:
+    items = "\n".join(
+        f"        <li><strong>{html.escape(name)}</strong> — {html.escape(affiliation)}</li>"
+        for name, affiliation in members
+    )
+    return f'      <ul class="pc-list">\n{items}\n      </ul>'
+
+
+TPC_LIST = tpc_list(TPC)
+
 
 def absolute_url(path: str = "") -> str:
     return f"{SITE_URL}/{path}" if path else f"{SITE_URL}/"
@@ -197,7 +373,7 @@ def json_ld(title: str, description: str, path: str = "", *, is_home: bool = Fal
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "eventStatus": "https://schema.org/EventScheduled",
             "startDate": "2026-12-11",
-            "endDate": "2026-12-12",
+            "endDate": "2026-12-11",
             "location": {
                 "@type": "Place",
                 "name": "NeurIPS 2026",
@@ -382,7 +558,7 @@ Sitemap: {SITE_URL}/sitemap.xml
     llms = f"""# AABA4ET — NeurIPS 2026 Workshop
 
 > 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks
-> NeurIPS 2026 · Sydney, Australia · December 11 or 12, 2026 (TBD)
+> NeurIPS 2026 · Sydney, Australia · December 11, 2026
 > Tagline: Where Agentic AI meets the real world of work
 
 This site is the canonical public homepage for the workshop.
@@ -393,7 +569,7 @@ Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages s
 - Full name: 2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks (AABA4ET)
 - Conference: NeurIPS 2026 (follows the AAAI 2026 first edition in Singapore)
 - Location: Sydney, Australia
-- Workshop day: December 11 or 12, 2026 (TBD)
+- Workshop day: December 11, 2026
 - Format: In-person; non-archival; dual submission welcome; double-blind review
 - Paper length: 4 pages, NeurIPS style
 - Submission deadline: August 31, 2026 (Anywhere on Earth / AoE)
@@ -439,7 +615,7 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 |------|-----------|
 | Aug 31, 2026 | Submission deadline |
 | Sep 29, 2026 | Acceptance notification |
-| Dec 11–12, 2026 | Workshop day (TBD) |
+| Dec 11, 2026 | Workshop day |
 
 ## Related
 
@@ -450,7 +626,7 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 
 
 # —— Home ——
-home_body = """  <header class="hero">
+home_body = f"""  <header class="hero">
     <div class="hero__media" aria-hidden="true"></div>
     <div class="hero__veil" aria-hidden="true"></div>
     <div class="wrap hero__inner">
@@ -462,7 +638,7 @@ home_body = """  <header class="hero">
       </p>
       <div class="hero__meta">
         <span><strong>Sydney, Australia</strong></span>
-        <span>December 11 or 12, 2026</span>
+        <span class="hero__meta-date">{ICON_CALENDAR}<strong>December 11, 2026</strong></span>
         <span>After AAAI 2026</span>
       </div>
       <div class="cta-row">
@@ -475,7 +651,7 @@ home_body = """  <header class="hero">
   <div class="update">
     <div class="wrap">
       <span class="update__label">Update</span>
-      <p>Accepted for NeurIPS 2026 — submissions open through August 31, 2026 (AoE).</p>
+      <p>{ICON_CALENDAR} <strong>Workshop date confirmed:</strong> December 11, 2026 · Sydney. Submissions open through August 31, 2026 (AoE).</p>
     </div>
   </div>
 
@@ -559,10 +735,7 @@ home_body = """  <header class="hero">
           <strong>Sep 29, 2026</strong>
           <span>Acceptance notification</span>
         </div>
-        <div class="date-item">
-          <strong>Dec 11–12, 2026</strong>
-          <span>Workshop day (TBD)</span>
-        </div>
+{WORKSHOP_DATE_ITEM}
       </div>
     </div>
   </section>
@@ -587,7 +760,7 @@ home_body = """  <header class="hero">
 """
 
 # —— CFP ——
-cfp_body = """  <section class="page-section">
+cfp_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Overview</p>
       <h2>Submit original work on Agentic AI for enterprise</h2>
@@ -626,10 +799,7 @@ cfp_body = """  <section class="page-section">
           <strong>Sep 29, 2026</strong>
           <span>Acceptance notification (AoE)</span>
         </div>
-        <div class="date-item">
-          <strong>Dec 11 or 12, 2026</strong>
-          <span>Workshop date (TBD)</span>
-        </div>
+{WORKSHOP_DATE_ITEM}
       </div>
     </div>
   </section>
@@ -736,14 +906,14 @@ panel_body = f"""  <section class="page-section">
 """
 
 # —— Schedule ——
-schedule_body = """  <section class="page-section">
+schedule_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Program</p>
       <h2>Workshop schedule</h2>
-      <p class="lede">The detailed timetable will be posted once the NeurIPS 2026 workshop day is confirmed.</p>
+      <p class="lede">{ICON_CALENDAR} Confirmed: December 11, 2026 · Sydney, Australia</p>
       <div class="tbd-panel">
-        <strong>TBD</strong>
-        <p class="muted">Expected workshop date: December 11 or 12, 2026 · Sydney, Australia</p>
+        <strong>Timetable TBD</strong>
+        <p class="muted">The detailed program will be posted closer to the workshop day.</p>
       </div>
     </div>
   </section>
@@ -819,9 +989,7 @@ organizers_body = f"""  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">Review</p>
       <h2>Technical Program Committee</h2>
-      <div class="tbd-panel">
-        <strong>TBD</strong>
-      </div>
+{TPC_LIST}
     </div>
   </section>
 """
@@ -910,9 +1078,9 @@ past_body = f"""  <section class="page-section">
 (ROOT / "schedule.html").write_text(page(
     "Schedule — AABA4ET NeurIPS 2026", "schedule", schedule_body,
     hero_title="Schedule",
-    hero_lede="December 11 or 12, 2026 · Sydney, Australia",
+    hero_lede=f'{ICON_CALENDAR} December 11, 2026 · Sydney, Australia',
     path="schedule.html",
-    description="Workshop schedule for AABA4ET at NeurIPS 2026 — December 11 or 12, Sydney.",
+    description="Workshop schedule for AABA4ET at NeurIPS 2026 — December 11, 2026, Sydney.",
 ))
 
 (ROOT / "organizers.html").write_text(page(
@@ -920,7 +1088,7 @@ past_body = f"""  <section class="page-section">
     hero_title="Organizers",
     hero_lede="CMU · Fujitsu · Keio · ServiceNow",
     path="organizers.html",
-    description="Organizers and steering committee for AABA4ET NeurIPS 2026.",
+    description="Organizers, steering committee, and technical program committee for AABA4ET NeurIPS 2026.",
 ))
 
 (ROOT / "accepted-papers.html").write_text(page(

@@ -33,6 +33,7 @@ All page copy, nav, SEO, and most people lists live in `generate_pages.py`.
 | Site URL, OpenReview, default description | Constants at top (`SITE_URL`, `OPENREVIEW`, …) |
 | Nav / footer links | `PAGES`, `nav()`, `footer()` |
 | Steering committee | `STEERING` list |
+| Technical program committee | `TPC` list |
 | Home, CFP, schedule, accepted papers, past | `home_body`, `cfp_body`, `schedule_body`, `accepted_body`, `past_body` |
 | Speakers / panel / organizers bios | `speakers_body`, `panel_body`, `organizers_body` |
 | New page | Add to `PAGES`, `nav()`, `footer()`, a `*_body`, and a `write_text` call at the bottom |
