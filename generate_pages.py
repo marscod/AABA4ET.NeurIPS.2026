@@ -150,8 +150,8 @@ STEERING = [
     ("Takuto Sato", "Fujitsu Ltd.", "images/organizers/sato.jpg"),
     ("Mehdi Bahrami", "Fujitsu Research of America, Inc.", "images/panelists/mehdi-bahrami.jpg"),
     ("Kanji Uchino", "Fujitsu Research of America, Inc.", "images/organizers/Kanji_Uchino.jpeg"),
-    ("Lei Liu", "Fujitsu Research of America, Inc.", "images/organizers/Lei-Liu.jpg", "Senior Research Manager"),
-    ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", "images/organizers/vardaan.jpg", "Principal Researcher"),
+    ("Lei Liu", "Fujitsu Research of America, Inc.", "images/organizers/Lei-Liu.jpg"),
+    ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", "images/organizers/vardaan.jpg"),
     ("Hideo Saito", "Keio University", "images/organizers/saito.jpg"),
     ("Alexandre Drouin", "ServiceNow", "images/organizers/drouin.png"),
 ]
