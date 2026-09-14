@@ -864,10 +864,11 @@ panel_body = f"""  <section class="page-section">
       <h2>Panelists</h2>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="images/panelists/kamelia-aryafar.jpg" alt="Kamelia Aryafar" width="160" height="160" loading="lazy" />
         <div class="person-copy">
-          {person_name("Kamelia Aryafar")}
-          <p class="role">AI and Engineering Executive, Netflix</p>
+          {person_name("Kamelia Aryafar", "https://www.karyafar.com/")}
+          <p class="role">Head of AI for Members, Netflix</p>
+          <p>Kamelia Aryafar is a senior technology executive with extensive experience building and scaling AI-driven products and platforms. She currently operates as Head of AI for Members at Netflix. Prior to Netflix, she was at Google, where she co-founded and led engineering for major AI products, including Gemini Enterprise and Business, Google Agentspace, and Vertex AI Search and Platform. She also served as EVP, Chief Algorithms and Analytics Officer, and a board member at Overstock.com (Bed Bath &amp; Beyond), where she oversaw engineering, AI, and product. Earlier in her career, she worked at Etsy, helping embed machine learning and AI across several products throughout the organization.</p>
 {social_icons("https://www.karyafar.com/", "https://www.linkedin.com/in/karyafar", "https://scholar.google.com/citations?user=whu7X_kAAAAJ&hl=en")}
         </div>
       </article>
