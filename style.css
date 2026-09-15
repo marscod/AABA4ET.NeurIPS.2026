@@ -700,6 +700,7 @@ body.past-sub .page-hero__media {
   width: 140px;
   height: 140px;
   object-fit: cover;
+  object-position: center top;
   border-radius: 6px;
   background: var(--mist);
 }
@@ -867,6 +868,7 @@ body.past-sub .page-hero__media {
   height: 88px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center top;
   background: var(--mist);
 }
 .steering-photo--placeholder {
