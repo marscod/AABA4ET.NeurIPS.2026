@@ -853,6 +853,27 @@ speakers_body = f"""  <section class="page-section">
 {social_icons("https://furong-huang.com/", "https://www.linkedin.com/in/furong-huang", "https://scholar.google.com/citations?user=13yyuCcAAAAJ&hl=en")}
         </div>
       </article>
+
+      <article class="person-full speaker">
+        <img class="person-photo" src="images/speakers/vincent-chen.jpg" alt="Vincent Sunn Chen" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          {person_name("Vincent Sunn Chen")}
+          <p class="role">Research Fellow &amp; Founding Team, Snorkel AI</p>
+          <p class="title-talk">Title: TBD</p>
+          <p>Vincent Sunn Chen is a Research Fellow on the founding team at Snorkel AI. His work centers on systems for high quality AI evaluation &amp; data development with experts in the loop. He currently leads the Open Benchmarks Grants, a $3M commitment to funding benchmarks and infrastructure for frontier agents. Prior to Snorkel, Vincent was a researcher at the Stanford AI Lab, where he studied the foundations of data-centric AI systems.</p>
+{social_icons(linkedin="https://www.linkedin.com/in/vincentsunnchen/", scholar="https://scholar.google.com/citations?user=LJqB50MAAAAJ&hl=en")}
+        </div>
+      </article>
+
+      <article class="person-full speaker">
+        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <div class="person-copy">
+          {person_name("Bertie Vidgen", "https://bertievidgen.com/")}
+          <p class="role">AI Research, Mercor</p>
+          <p class="title-talk">Title: TBD</p>
+{social_icons("https://bertievidgen.com/", "https://www.linkedin.com/in/bertie-vidgen-001/", "https://scholar.google.com/citations?user=yRhnVoIAAAAJ&hl=en")}
+        </div>
+      </article>
     </div>
   </section>
 """
