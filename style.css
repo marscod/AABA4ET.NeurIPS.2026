@@ -707,6 +707,8 @@ body.past-sub .page-hero__media {
 }
 .person-photo--portrait {
   height: 175px;
+  object-fit: contain;
+  object-position: center top;
 }
 .person-copy { display: grid; gap: 0.55rem; }
 .person-full h3 {
