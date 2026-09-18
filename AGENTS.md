@@ -64,7 +64,7 @@ Speakers: `<article class="person-full speaker">`. Panelists use the same class.
 </article>
 ```
 
-- Photo: `images/speakers/`, `images/panelists/`, or `images/organizers/`. Lowercase kebab-case filenames. If there is no photo, use `<div class="person-photo person-photo--placeholder" aria-hidden="true"></div>` instead of `<img>`.
+- Photo: `images/speakers/`, `images/panelists/`, or `images/organizers/`. Lowercase kebab-case filenames. If there is no photo, use `<div class="person-photo person-photo--placeholder" aria-hidden="true"></div>` instead of `<img>`. For a 4:5 portrait that would be cropped in the square frame, add `person-photo--portrait` and use `width="160" height="200"`.
 - `person_name(name, website=None)` renders the heading. Pass the website as the second argument when you have one (same URL as `social_icons` website).
 - Role: one line, title then affiliation. Speakers also get `<p class="title-talk">Title: TBD</p>` until the talk title is known.
 - Organizers may include `<p class="expertise"><strong>Expertise:</strong> …</p>` after the bio.
