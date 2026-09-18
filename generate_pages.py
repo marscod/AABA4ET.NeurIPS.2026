@@ -906,10 +906,12 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
+        <img class="person-photo" src="images/panelists/shivam-patel.png" alt="Shivam Patel" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Shivam Patel")}
-          <p class="role">OpenAI</p>
+          <p class="role">Member of the Technical Staff, OpenAI</p>
+          <p>Shivam Patel is a Member of the Technical Staff at OpenAI, where he works on AI safety, evaluation, and abuse prevention. Previously, he was a Senior Machine Learning Engineer at Apple, working on retrieval and ranking for retrieval-augmented generation and agentic question-answering systems. At Google, he worked on large-scale recommendation systems, neural architecture search, and privacy-preserving machine learning. His research internship at Adobe focused on multimodal models for video understanding.</p>
+          <p>He previously held visiting research appointments at the University of Cambridge, Mila, Caltech, and MIT, with work spanning agent-based modeling, reinforcement learning, computer vision, and mathematical methods for machine learning. His interests include the development and evaluation of reliable AI agents and applications of AI to scientific and mathematical problems.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/shivamwhohelps")}
         </div>
       </article>
