@@ -703,6 +703,10 @@ body.past-sub .page-hero__media {
   object-position: center top;
   border-radius: 6px;
   background: var(--mist);
+  flex-shrink: 0;
+}
+.person-photo--portrait {
+  height: 175px;
 }
 .person-copy { display: grid; gap: 0.55rem; }
 .person-full h3 {
@@ -781,6 +785,9 @@ body.past-sub .page-hero__media {
   .person-photo {
     width: 96px;
     height: 96px;
+  }
+  .person-photo--portrait {
+    height: 120px;
   }
   .social-icons a {
     width: 1.5rem;
@@ -1052,6 +1059,9 @@ body.past-sub .page-hero__media {
   .person-photo {
     width: 112px;
     height: 112px;
+  }
+  .person-photo--portrait {
+    height: 140px;
   }
 
   .submit-box {

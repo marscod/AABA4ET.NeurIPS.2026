@@ -895,7 +895,7 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <img class="person-photo" src="images/panelists/mehdi-bahrami.jpg" alt="Mehdi Bahrami" width="160" height="160" loading="lazy" />
+        <img class="person-photo person-photo--portrait" src="images/panelists/mehdi-bahrami.jpg" alt="Mehdi Bahrami" width="160" height="200" loading="lazy" />
         <div class="person-copy">
           {person_name("Mehdi Bahrami")}
           <p class="role">Senior Research Manager, Fujitsu Research of America</p>
@@ -906,7 +906,7 @@ panel_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <img class="person-photo" src="images/panelists/shivam-patel.png" alt="Shivam Patel" width="160" height="160" loading="lazy" />
+        <img class="person-photo person-photo--portrait" src="images/panelists/shivam-patel.png" alt="Shivam Patel" width="160" height="200" loading="lazy" />
         <div class="person-copy">
           {person_name("Shivam Patel")}
           <p class="role">Member of the Technical Staff, OpenAI</p>
