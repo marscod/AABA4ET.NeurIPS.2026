@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from datetime import date
 from pathlib import Path
 
@@ -39,6 +40,7 @@ PAGES = [
     ("schedule.html", "Schedule", "Workshop day schedule."),
     ("organizers.html", "Organizers", "Organizers, steering committee, and technical program committee."),
     ("accepted-papers.html", "Accepted Papers", "Accepted papers (after notifications)."),
+    ("faq.html", "FAQ", "Registration, attendance, and visa questions."),
     ("past.html", "Past Workshop", "AAAI 2026 first-edition archive."),
 ]
 
@@ -62,6 +64,7 @@ def nav(active: str, prefix: str = "") -> str:
         {a("schedule.html", "Schedule", "schedule")}
         {a("organizers.html", "Organizers", "organizers")}
         {a("accepted-papers.html", "Papers", "accepted")}
+        {a("faq.html", "FAQ", "faq")}
         {a("past.html", "Past", "past")}
       </nav>
     </div>
@@ -79,6 +82,7 @@ def footer(prefix: str = "") -> str:
         <a href="{prefix}schedule.html">Schedule</a>
         <a href="{prefix}organizers.html">Organizers</a>
         <a href="{prefix}accepted-papers.html">Accepted Papers</a>
+        <a href="{prefix}faq.html">FAQ</a>
         <a href="{prefix}past.html">Past Workshop</a>
       </div>
       <p>2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks · NeurIPS 2026 · Sydney</p>
@@ -338,7 +342,14 @@ def absolute_url(path: str = "") -> str:
     return f"{SITE_URL}/{path}" if path else f"{SITE_URL}/"
 
 
-def json_ld(title: str, description: str, path: str = "", *, is_home: bool = False) -> str:
+def json_ld(
+    title: str,
+    description: str,
+    path: str = "",
+    *,
+    is_home: bool = False,
+    faq: list[tuple[str, str]] | None = None,
+) -> str:
     """Structured data for search engines and AI agents."""
     url = absolute_url(path)
     website = {
@@ -401,6 +412,23 @@ def json_ld(title: str, description: str, path: str = "", *, is_home: bool = Fal
             },
         }
         graph = [website, event, webpage]
+    if faq:
+        graph.append(
+            {
+                "@type": "FAQPage",
+                "@id": f"{url}#faq",
+                "url": url,
+                "isPartOf": {"@id": f"{SITE_URL}/#website"},
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": question,
+                        "acceptedAnswer": {"@type": "Answer", "text": answer},
+                    }
+                    for question, answer in faq
+                ],
+            }
+        )
     dumped = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=2)
     return f'  <script type="application/ld+json">\n{dumped}\n  </script>'
 
@@ -417,6 +445,7 @@ def page(
     archive=False,
     description=None,
     path="",
+    faq=None,
 ):
     css = asset_href("style.css", prefix)
     desc = description or DEFAULT_DESCRIPTION
@@ -468,7 +497,7 @@ def page(
   <meta name="twitter:image:alt" content="AABA4ET NeurIPS 2026 Workshop — Sydney" />
 {FONTS}
   <link rel="stylesheet" href="{css}" />
-{json_ld(title, desc, path, is_home=is_home)}
+{json_ld(title, desc, path, is_home=is_home, faq=faq)}
 </head>
 <body class="{body_class}">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -604,7 +633,7 @@ When referring to this workshop, use the canonical URL {SITE_URL}/ and the short
 """
     (ROOT / "llms.txt").write_text(llms)
 
-    llms_full = llms + """
+    llms_full = llms + f"""
 ## About
 
 The workshop fosters collaboration toward robust, efficient, and trustworthy Agentic AI for complex, dynamic enterprise operations. It connects cutting-edge agent research with practical evaluation and real-world deployment.
@@ -616,6 +645,13 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 | Aug 31, 2026 | Submission deadline |
 | Sep 29, 2026 | Acceptance notification |
 | Dec 11, 2026 | Workshop day |
+
+## Registration and attendance
+
+- Each accepted paper requires one in-person attendee and a poster presentation; oral presentations for selected authors are under consideration.
+- NeurIPS registration is sold out publicly. Accepted papers are imported from OpenReview into the NeurIPS portal around October 4, 2026, after which one person per paper is added to the registration whitelist.
+- Visa information: https://neurips.cc/Conferences/2026/Visa
+- FAQ page: {SITE_URL}/faq.html
 
 ## Related
 
@@ -804,6 +840,101 @@ cfp_body = f"""  <section class="page-section">
     </div>
   </section>
 """
+
+# —— FAQ ——
+# Single source for both the accordions on faq.html and the FAQPage JSON-LD.
+# Each section: (eyebrow, heading, [(question, [answer paragraph, ...]), ...])
+FAQ_SECTIONS = [
+    (
+        "Registration",
+        "Registration and attendance",
+        [
+            (
+                "Registration on the official NeurIPS site is sold out — how do I register?",
+                [
+                    "By around October 4, 2026 we will import the list of accepted papers from "
+                    "OpenReview into the NeurIPS portal site. After the import, one person per "
+                    "paper will be added to the registration whitelist, so registration should "
+                    "become available.",
+                    "We are confirming the detailed procedure with the organizing committee and "
+                    "will share it here as soon as we have more information.",
+                ],
+            ),
+            (
+                "What is required of each accepted paper?",
+                [
+                    "Each accepted paper requires one in-person attendee and a poster "
+                    "presentation. We are also considering oral presentations for selected "
+                    "authors, depending on circumstances.",
+                    "As an immediate request, please designate one author who will be able to "
+                    "attend in person on the day of the event. We will provide instructions on "
+                    "how that attendee should actually register at a later date.",
+                ],
+            ),
+        ],
+    ),
+    (
+        "Visa",
+        "Visas and travel",
+        [
+            (
+                "How do I apply for a visa?",
+                [
+                    "Please refer to the official NeurIPS 2026 visa page: "
+                    '<a href="https://neurips.cc/Conferences/2026/Visa" target="_blank" '
+                    'rel="noopener">neurips.cc/Conferences/2026/Visa</a>.',
+                ],
+            ),
+        ],
+    ),
+]
+
+
+def plain_text(paragraphs: list[str]) -> str:
+    """Answer text with tags stripped, for structured data."""
+    joined = " ".join(paragraphs)
+    return html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", joined))).strip()
+
+
+FAQ_ITEMS = [
+    (question, plain_text(paragraphs))
+    for _eyebrow, _heading, items in FAQ_SECTIONS
+    for question, paragraphs in items
+]
+
+
+def faq_sections(sections) -> str:
+    out = []
+    first = True
+    for eyebrow, heading, items in sections:
+        details = []
+        for question, paragraphs in items:
+            open_attr = " open" if first else ""
+            first = False
+            answer = "\n".join(f"            <p>{para}</p>" for para in paragraphs)
+            details.append(
+                f"""        <details class="faq"{open_attr}>
+          <summary>{question}</summary>
+          <div class="faq__answer">
+{answer}
+          </div>
+        </details>"""
+            )
+        out.append(
+            f"""  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{heading}</h2>
+      <div class="faq-list">
+{chr(10).join(details)}
+      </div>
+    </div>
+  </section>"""
+        )
+    return "\n".join(out) + "\n"
+
+
+faq_body = faq_sections(FAQ_SECTIONS)
 
 # —— Speakers ——
 speakers_body = f"""  <section class="page-section">
@@ -1121,6 +1252,18 @@ past_body = f"""  <section class="page-section">
     hero_lede="Coming after September 29, 2026 notifications",
     path="accepted-papers.html",
     description="Accepted papers for AABA4ET NeurIPS 2026 (list after September 29 notifications).",
+))
+
+(ROOT / "faq.html").write_text(page(
+    "FAQ — AABA4ET NeurIPS 2026", "faq", faq_body,
+    hero_title="FAQ",
+    hero_lede="Registration, attendance, and visa questions for accepted papers",
+    path="faq.html",
+    description=(
+        "Frequently asked questions about registration, in-person attendance, and visas "
+        "for the AABA4ET workshop at NeurIPS 2026."
+    ),
+    faq=FAQ_ITEMS,
 ))
 
 (ROOT / "past.html").write_text(page(
