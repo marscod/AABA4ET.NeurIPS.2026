@@ -932,12 +932,6 @@ FAQ_SECTIONS = [
                     "different template, please consider option 1 (for example, arXiv).",
                 ],
             ),
-        ],
-    ),
-    (
-        "Authors",
-        "Author list",
-        [
             (
                 "Is it possible to add or remove co-authors from a paper?",
                 [
