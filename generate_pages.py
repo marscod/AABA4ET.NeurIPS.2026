@@ -39,7 +39,7 @@ PAGES = [
     ("panel.html", "Panel", "Industry and research panel."),
     ("schedule.html", "Schedule", "Workshop day schedule."),
     ("organizers.html", "Organizers", "Organizers, steering committee, and technical program committee."),
-    ("accepted-papers.html", "Accepted Papers", "Accepted papers (after notifications)."),
+    ("accepted-papers.html", "Accepted Papers", "Accepted papers."),
     ("faq.html", "FAQ", "Registration, attendance, visas, publication, and author changes."),
     ("past.html", "Past Workshop", "AAAI 2026 first-edition archive."),
 ]
@@ -458,12 +458,12 @@ def page(
   </div>"""
     hero = ""
     if hero_title:
+        lede = f'\n      <p class="lede">{hero_lede}</p>' if hero_lede else ""
         hero = f"""  <section class="page-hero">
     <div class="page-hero__media" aria-hidden="true"></div>
     <div class="wrap">
       <p class="eyebrow">AABA4ET</p>
-      <h1>{hero_title}</h1>
-      <p class="lede">{hero_lede}</p>
+      <h1>{hero_title}</h1>{lede}
     </div>
   </section>"""
     return f"""<!DOCTYPE html>
@@ -1209,11 +1209,227 @@ organizers_body = f"""  <section class="page-section">
 accepted_body = """  <section class="page-section">
     <div class="wrap">
       <p class="eyebrow">NeurIPS 2026</p>
-      <h2>Accepted papers</h2>
-      <p class="lede">The list will be published after the notification date (September 29, 2026).</p>
-      <div class="tbd-panel">
-        <strong>TBD</strong>
-        <p class="muted">Check back after acceptances are announced.</p>
+      <h2>List of Workshop Papers</h2>
+      <div class="paper-list">
+        <article>
+          <h3>When Should a Generative Agent Request Inspection? Cost-Sensitive Information Actions for Bridge Maintenance</h3>
+        </article>
+        <article>
+          <h3>OpsBench: A Reliability-Oriented Benchmark for Open-Weight Agents on Internal Enterprise Operations</h3>
+        </article>
+        <article>
+          <h3>Cerebro: An Enterprise Language Model for Agentic Tool Use</h3>
+        </article>
+        <article>
+          <h3>From Enterprise Pipelines to Agent Context: Distilling Compact Models for Schema Lineage</h3>
+        </article>
+        <article>
+          <h3>Diversity by Construction: Grounded Question Generation for Agentic Commerce Memory</h3>
+        </article>
+        <article>
+          <h3>AgentFinVQA: An Auditable, On-Premise Multi-Agent Pipeline for Financial Chart QA</h3>
+        </article>
+        <article>
+          <h3>kRAIG: A Natural Language-Driven Agent for Automated DataOps Pipeline Generation</h3>
+        </article>
+        <article>
+          <h3>Evidence Guided Adaptive Search for Helping AI Agents Find Missing Facts Before Answering</h3>
+        </article>
+        <article>
+          <h3>Stage: Stateful Translation to Agentic Graph Execution with Policy-Scoped Context and Deterministic Control</h3>
+        </article>
+        <article>
+          <h3>PointerBench: A Diagnostic Benchmark for Fine-Grained GUI Grounding</h3>
+        </article>
+        <article>
+          <h3>Hallucination Detection in Black-Box LLMs Using Complementary Uncertainty Signals</h3>
+        </article>
+        <article>
+          <h3>Emergent Misaligned Communication in Long-Horizon Multi-Agent LLM Commerce</h3>
+        </article>
+        <article>
+          <h3>FiCo: Find-then-Compute for Corpus-Level Spreadsheet Question Answering</h3>
+        </article>
+        <article>
+          <h3>Esmeralda: A Benchmark for Enterprise Service Management Agent Readiness</h3>
+        </article>
+        <article>
+          <h3>CIPHER: A Decoupled Exploration-Selection Framework for Test-Time Scaling of Data Science Agents</h3>
+        </article>
+        <article>
+          <h3>Iterate on an LLM, Serve on an SLM</h3>
+        </article>
+        <article>
+          <h3>From Manuals to Worlds: Synthesizing Executable Enterprise Environments for LLM Agents</h3>
+        </article>
+        <article>
+          <h3>TS-AgentBench: Necessity vs. Robustness in Agentic Forecasting</h3>
+        </article>
+        <article>
+          <h3>VDGR-RAG: Vectors, Directories, Graphs, and Reflection Are All You Need for Unified Reasoning over Hierarchical Enterprise Knowledge</h3>
+        </article>
+        <article>
+          <h3>Controlled Perturbation Reveals Grounding and Faithfulness Failures in Computer-Use Agents</h3>
+        </article>
+        <article>
+          <h3>AgentScript-Eval: Benchmarking LLMs and Agents for Code Generation in an Enterprise DSL</h3>
+        </article>
+        <article>
+          <h3>Who's Asking? A Role-Conditioned Benchmark for Operational Reasoning in Enterprise Agents</h3>
+        </article>
+        <article>
+          <h3>Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?</h3>
+        </article>
+        <article>
+          <h3>AIM: Adversarial Interface Manipulation</h3>
+        </article>
+        <article>
+          <h3>Toward Reliable Agentic RAG: Lessons from Multi-Run Evaluation</h3>
+        </article>
+        <article>
+          <h3>Don't Prompt, Graph It: Reliable SOP Compliance via Workflow Graphs</h3>
+        </article>
+        <article>
+          <h3>UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training</h3>
+        </article>
+        <article>
+          <h3>Can an Injected-Failure Benchmark Pick Your Monitor? A Four-Part Validity Audit for Enterprise Agent Deployment</h3>
+        </article>
+        <article>
+          <h3>Break It to Align It: Annotation-Free Medical Safety Alignment via Preference Inversion</h3>
+        </article>
+        <article>
+          <h3>From Document QA to Enterprise Tool Use: A Paired Outcome-and-Trajectory Study</h3>
+        </article>
+        <article>
+          <h3>Agentic Search for Deployment-Specific Configuration of Promptable Detectors</h3>
+        </article>
+        <article>
+          <h3>PrecisionCUA: Iterative Visual Refinement for Pixel-Precise Cursor Grounding in Code Editors</h3>
+        </article>
+        <article>
+          <h3>Where Does the Low-Cost Model Tier Break in Enterprise Agentic Workflows?</h3>
+        </article>
+        <article>
+          <h3>Decoupled Planning and Execution for Trustworthy Agents in Closed-Environment</h3>
+        </article>
+        <article>
+          <h3>Asymmetric Federated Agentic Intelligence</h3>
+        </article>
+        <article>
+          <h3>Constructing an Obligation-Aware Evaluation Corpus for Enterprise Agent Memory</h3>
+        </article>
+        <article>
+          <h3>Necessary or Sufficient? Evaluating Explanations from Enterprise LLM Decision Systems with Behavioural Interventions</h3>
+        </article>
+        <article>
+          <h3>Enterprise-Scale Agentic Classification with a Governed Execution Envelope</h3>
+        </article>
+        <article>
+          <h3>EnterpriseFact: Where Frontier Agents Fail in Enterprise Fact-Finding</h3>
+        </article>
+        <article>
+          <h3>Determine: Benchmarking Graph-Driven Agentic Movie Making</h3>
+        </article>
+        <article>
+          <h3>Staying on Task: Testing the Foundations of Long-Horizon Agent Reliability</h3>
+        </article>
+        <article>
+          <h3>NovaMart: A Causally Consistent Simulated Enterprise for Measuring Tribal Knowledge Extraction</h3>
+        </article>
+        <article>
+          <h3>ASIRF: An Agentic Framework for Context-Dependent Sensitive Information Redaction</h3>
+        </article>
+        <article>
+          <h3>VerifierContractBench: Auditing Safety Regressions in Evaluators for Enterprise Web Agents</h3>
+        </article>
+        <article>
+          <h3>STRATA: Automated Construction of Professional Tasks and Rubrics for Agent Evaluation</h3>
+        </article>
+        <article>
+          <h3>BlueFin: Benchmarking LLM Agents on Financial Modeling</h3>
+        </article>
+        <article>
+          <h3>DockRepair: Evaluating Safe Abstention in Agentic Docker Compose Remediation</h3>
+        </article>
+        <article>
+          <h3>Taking the PULSE of Enterprise Workflows: Evaluating Persistent Project-State Understanding</h3>
+        </article>
+        <article>
+          <h3>Refusal Is Not Action Safety: Behavioral and Mechanistic Evidence from Tool-Using LLM Agents</h3>
+        </article>
+        <article>
+          <h3>Verified Alt-Text for Product Catalogs: A Five-Agent Framework</h3>
+        </article>
+        <article>
+          <h3>Can LLM Agents Remain Compliant Under Real-World Pressure?</h3>
+        </article>
+        <article>
+          <h3>Evaluating LLM Agents on Multi-Modal Professional Finance Workflows</h3>
+        </article>
+        <article>
+          <h3>Frontier Work: Benchmarking AI Agents on End-to-End Professional Workflows</h3>
+        </article>
+        <article>
+          <h3>TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator</h3>
+        </article>
+        <article>
+          <h3>CentaurBench: Benchmarking LLM Capabilities on Augmenting vs. Automating Real-World Work Tasks</h3>
+        </article>
+        <article>
+          <h3>How Far Are Synthetic Text-to-SQL Benchmarks from Enterprise Production Traffic?</h3>
+        </article>
+        <article>
+          <h3>FORAGE: Related Works Prediction as a Benchmark for Agentic Retrieval</h3>
+        </article>
+        <article>
+          <h3>Unified Agentic Video Editing Across Levels of Complexity and Creativity</h3>
+        </article>
+        <article>
+          <h3>SLATE: A Large-Scale Benchmark for Long-Horizon API Selection in Enterprise Tool Use</h3>
+        </article>
+        <article>
+          <h3>AI-BAAM: AI-Driven Bank Statement Analytics as Alternative Data for Malaysian MSME Credit Scoring</h3>
+        </article>
+        <article>
+          <h3>PRISM: Prompt-Refined In-Context System Modeling for Financial Retrieval</h3>
+        </article>
+        <article>
+          <h3>When Guardrails Look Effective: Construct-Valid Evaluation for Multi-Agent Enterprise Commerce</h3>
+        </article>
+        <article>
+          <h3>FDE-Bench: Evaluating LLM Agents for Deployment Environment Configuration</h3>
+        </article>
+        <article>
+          <h3>From LLM Control to Environment-Adaptive Agents: Sample-Efficient RL for Real-World HVAC Control</h3>
+        </article>
+        <article>
+          <h3>Deep Research Agents for Shell Company Screening</h3>
+        </article>
+        <article>
+          <h3>EnvOS: Certified Evaluation of Enterprise Agents in Changing Environments</h3>
+        </article>
+        <article>
+          <h3>A Real-Robot Dataset for Multi-Stage Shoe Inspection Handling</h3>
+        </article>
+        <article>
+          <h3>Agentic Validation and Repair of Network Automation Programs with the Compiler as Judge</h3>
+        </article>
+        <article>
+          <h3>Westworld Finance Diligence Bench: Evaluating AI Agents on Long-Horizon Enterprise Work</h3>
+        </article>
+        <article>
+          <h3>DEALTRACE: Localizing and Intervening on Failures in Agentic Financial Reasoning</h3>
+        </article>
+        <article>
+          <h3>WarehouseAI: A Closed-Loop Multi-Agent Framework for Industrial Operations Planning</h3>
+        </article>
+        <article>
+          <h3>CLAIMRECEIPT: Auditable Evidence Contracts for Enterprise Agent Benchmarks</h3>
+        </article>
+        <article>
+          <h3>Towards continual in-context learning via training Cartridges at test time</h3>
+        </article>
       </div>
     </div>
   </section>
@@ -1305,9 +1521,8 @@ past_body = f"""  <section class="page-section">
 (ROOT / "accepted-papers.html").write_text(page(
     "Accepted Papers — AABA4ET NeurIPS 2026", "accepted", accepted_body,
     hero_title="Accepted Papers",
-    hero_lede="Coming after September 29, 2026 notifications",
     path="accepted-papers.html",
-    description="Accepted papers for AABA4ET NeurIPS 2026 (list after September 29 notifications).",
+    description="Accepted papers for the AABA4ET workshop at NeurIPS 2026.",
 ))
 
 (ROOT / "faq.html").write_text(page(

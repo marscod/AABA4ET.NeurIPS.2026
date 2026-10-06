@@ -37,7 +37,7 @@ Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages s
 - [Panel](https://marscod.github.io/AABA4ET.NeurIPS.2026/panel.html): Industry and research panel.
 - [Schedule](https://marscod.github.io/AABA4ET.NeurIPS.2026/schedule.html): Workshop day schedule.
 - [Organizers](https://marscod.github.io/AABA4ET.NeurIPS.2026/organizers.html): Organizers, steering committee, and technical program committee.
-- [Accepted Papers](https://marscod.github.io/AABA4ET.NeurIPS.2026/accepted-papers.html): Accepted papers (after notifications).
+- [Accepted Papers](https://marscod.github.io/AABA4ET.NeurIPS.2026/accepted-papers.html): Accepted papers.
 - [FAQ](https://marscod.github.io/AABA4ET.NeurIPS.2026/faq.html): Registration, attendance, visas, publication, and author changes.
 - [Past Workshop](https://marscod.github.io/AABA4ET.NeurIPS.2026/past.html): AAAI 2026 first-edition archive.
 
