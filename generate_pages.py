@@ -40,7 +40,7 @@ PAGES = [
     ("schedule.html", "Schedule", "Workshop day schedule."),
     ("organizers.html", "Organizers", "Organizers, steering committee, and technical program committee."),
     ("accepted-papers.html", "Accepted Papers", "Accepted papers (after notifications)."),
-    ("faq.html", "FAQ", "Registration, attendance, and visa questions."),
+    ("faq.html", "FAQ", "Registration, attendance, visas, publication, and author changes."),
     ("past.html", "Past Workshop", "AAAI 2026 first-edition archive."),
 ]
 
@@ -648,8 +648,11 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 
 ## Registration and attendance
 
-- Each accepted paper requires one in-person attendee and a poster presentation; oral presentations for selected authors are under consideration.
-- NeurIPS registration is sold out publicly. Accepted papers are imported from OpenReview into the NeurIPS portal around October 4, 2026, after which one person per paper is added to the registration whitelist.
+- NeurIPS registration is sold out publicly. Each accepted paper has one author registration slot, which goes to the first author to register: https://neurips.cc/Conferences/2026/AuthorRegistration
+- The NeurIPS account email must match the OpenReview email; contact the organizers to use a different account.
+- Presentations are in person in principle; remote poster presentations are unlikely and not guaranteed.
+- Publication is optional: authors may post on arXiv (linked from the site) or upload a camera-ready to OpenReview, using the NeurIPS template.
+- Contact: neurips26ws-aaba4et-organizer@googlegroups.com
 - Visa information: https://neurips.cc/Conferences/2026/Visa
 - FAQ page: {SITE_URL}/faq.html
 
@@ -850,25 +853,30 @@ FAQ_SECTIONS = [
         "Registration and attendance",
         [
             (
-                "Registration on the official NeurIPS site is sold out — how do I register?",
+                "Registration on the official NeurIPS site is sold out. How do I register?",
                 [
-                    "By around October 4, 2026 we will import the list of accepted papers from "
-                    "OpenReview into the NeurIPS portal site. After the import, one person per "
-                    "paper will be added to the registration whitelist, so registration should "
-                    "become available.",
-                    "We are confirming the detailed procedure with the organizing committee and "
-                    "will share it here as soon as we have more information.",
+                    "Detailed registration information is available on the "
+                    '<a href="https://neurips.cc/Conferences/2026/AuthorRegistration" target="_blank" '
+                    'rel="noopener">NeurIPS 2026 author registration page</a>; please review it '
+                    "before registering.",
+                    "This slot is valid for only one author per accepted paper and goes to the "
+                    "first person to register, so please consult with your co-authors in advance "
+                    "to decide who will attend in person and register.",
+                    "Please make sure the email address on your NeurIPS account matches the one "
+                    "used for OpenReview. If you wish to use a different account, please contact "
+                    "the organizers.",
                 ],
             ),
             (
-                "What is required of each accepted paper?",
+                "What should I do if I am unable to attend in person due to visa issues or other circumstances?",
                 [
-                    "Each accepted paper requires one in-person attendee and a poster "
-                    "presentation. We are also considering oral presentations for selected "
-                    "authors, depending on circumstances.",
-                    "As an immediate request, please designate one author who will be able to "
-                    "attend in person on the day of the event. We will provide instructions on "
-                    "how that attendee should actually register at a later date.",
+                    "The NeurIPS organizers have stated that presentations must, in principle, be "
+                    "delivered in person. Please apply for a visa promptly and, at the same time, "
+                    "consider arranging for a substitute presenter.",
+                    "Remote poster presentations would require preparation on the part of the "
+                    "workshop organizers and are unlikely to be feasible. However, if there is "
+                    "significant demand we will consider it, so please contact us if it is "
+                    "unavoidable. We cannot guarantee remote presentations.",
                 ],
             ),
         ],
@@ -878,11 +886,45 @@ FAQ_SECTIONS = [
         "Visas and travel",
         [
             (
-                "How do I apply for a visa?",
+                "I would like to apply for a visa. Where do I start?",
                 [
                     "Please refer to the official NeurIPS 2026 visa page: "
                     '<a href="https://neurips.cc/Conferences/2026/Visa" target="_blank" '
                     'rel="noopener">neurips.cc/Conferences/2026/Visa</a>.',
+                    "Because the process from application to receipt takes a long time, we "
+                    "recommend that anyone who needs a visa register for the conference and "
+                    "request an invitation letter as soon as possible after their paper is accepted.",
+                ],
+            ),
+        ],
+    ),
+    (
+        "Publication",
+        "Paper publication",
+        [
+            (
+                "When should I submit the camera-ready version?",
+                [
+                    "For our workshop, authors decide whether to publish their papers. We will "
+                    "post the list of accepted papers on this website shortly.",
+                    "If you wish to have your paper published, please contact the organizers and "
+                    "let us know your preferred method of publication. We anticipate two options:",
+                    "<ol>\n"
+                    "              <li>Publish separately, for example on arXiv, and we link to it from our website.</li>\n"
+                    "              <li>Upload the camera-ready version to OpenReview and we link to it.</li>\n"
+                    "            </ol>",
+                    "There are no specific page-count requirements for the camera-ready version. "
+                    "We expect authors to use the NeurIPS template as is. If you plan to use a "
+                    "different template, please consider option 1 (for example, arXiv).",
+                ],
+            ),
+            (
+                "Is it possible to add or remove co-authors from a paper?",
+                [
+                    "Please send the organizers the names of the authors to be added or removed, "
+                    "and we will make the corrections in OpenReview.",
+                    "If an added co-author will be presenting in person, please let us know, as "
+                    "additional registration steps will be required.",
                 ],
             ),
         ],
@@ -911,7 +953,10 @@ def faq_sections(sections) -> str:
         for question, paragraphs in items:
             open_attr = " open" if first else ""
             first = False
-            answer = "\n".join(f"            <p>{para}</p>" for para in paragraphs)
+            answer = "\n".join(
+                f"            {para}" if para.startswith(("<ol", "<ul")) else f"            <p>{para}</p>"
+                for para in paragraphs
+            )
             details.append(
                 f"""        <details class="faq"{open_attr}>
           <summary>{question}</summary>
@@ -934,7 +979,18 @@ def faq_sections(sections) -> str:
     return "\n".join(out) + "\n"
 
 
-faq_body = faq_sections(FAQ_SECTIONS)
+faq_body = """  <section class="page-section">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h2>Contact the organizers</h2>
+      <p class="lede faq-intro">
+        Please refer to the frequently asked questions below. If you have any further questions
+        or issues, please contact the organizers at
+        <a href="mailto:neurips26ws-aaba4et-organizer@googlegroups.com">neurips26ws-aaba4et-organizer@googlegroups.com</a>.
+      </p>
+    </div>
+  </section>
+""" + faq_sections(FAQ_SECTIONS)
 
 # —— Speakers ——
 speakers_body = f"""  <section class="page-section">
@@ -1257,11 +1313,11 @@ past_body = f"""  <section class="page-section">
 (ROOT / "faq.html").write_text(page(
     "FAQ — AABA4ET NeurIPS 2026", "faq", faq_body,
     hero_title="FAQ",
-    hero_lede="Registration, attendance, and visa questions for accepted papers",
+    hero_lede="Registration, attendance, visas, publication, and author changes for accepted papers",
     path="faq.html",
     description=(
-        "Frequently asked questions about registration, in-person attendance, and visas "
-        "for the AABA4ET workshop at NeurIPS 2026."
+        "Frequently asked questions about registration, in-person attendance, visas, paper "
+        "publication, and author changes for the AABA4ET workshop at NeurIPS 2026."
     ),
     faq=FAQ_ITEMS,
 ))

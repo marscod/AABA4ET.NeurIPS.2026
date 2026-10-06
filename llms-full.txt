@@ -38,7 +38,7 @@ Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages s
 - [Schedule](https://marscod.github.io/AABA4ET.NeurIPS.2026/schedule.html): Workshop day schedule.
 - [Organizers](https://marscod.github.io/AABA4ET.NeurIPS.2026/organizers.html): Organizers, steering committee, and technical program committee.
 - [Accepted Papers](https://marscod.github.io/AABA4ET.NeurIPS.2026/accepted-papers.html): Accepted papers (after notifications).
-- [FAQ](https://marscod.github.io/AABA4ET.NeurIPS.2026/faq.html): Registration, attendance, and visa questions.
+- [FAQ](https://marscod.github.io/AABA4ET.NeurIPS.2026/faq.html): Registration, attendance, visas, publication, and author changes.
 - [Past Workshop](https://marscod.github.io/AABA4ET.NeurIPS.2026/past.html): AAAI 2026 first-edition archive.
 
 ## Machine-readable
@@ -67,8 +67,11 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 
 ## Registration and attendance
 
-- Each accepted paper requires one in-person attendee and a poster presentation; oral presentations for selected authors are under consideration.
-- NeurIPS registration is sold out publicly. Accepted papers are imported from OpenReview into the NeurIPS portal around October 4, 2026, after which one person per paper is added to the registration whitelist.
+- NeurIPS registration is sold out publicly. Each accepted paper has one author registration slot, which goes to the first author to register: https://neurips.cc/Conferences/2026/AuthorRegistration
+- The NeurIPS account email must match the OpenReview email; contact the organizers to use a different account.
+- Presentations are in person in principle; remote poster presentations are unlikely and not guaranteed.
+- Publication is optional: authors may post on arXiv (linked from the site) or upload a camera-ready to OpenReview, using the NeurIPS template.
+- Contact: neurips26ws-aaba4et-organizer@googlegroups.com
 - Visa information: https://neurips.cc/Conferences/2026/Visa
 - FAQ page: https://marscod.github.io/AABA4ET.NeurIPS.2026/faq.html
 

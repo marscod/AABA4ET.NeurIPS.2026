@@ -961,13 +961,16 @@ body.past-sub .page-hero__media {
   color: var(--ink-soft);
   font-size: 0.96rem;
 }
-.faq__answer a {
+.faq__answer a,
+.faq-intro a {
   color: var(--teal-deep);
   font-weight: 600;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
-.faq__answer a:hover { text-decoration: underline; }
+.faq__answer a:hover,
+.faq-intro a:hover { text-decoration: underline; }
+.faq__answer ol { margin: 0; padding-left: 1.25rem; }
 @media (max-width: 640px) {
   .faq summary { font-size: 1.05rem; }
 }
