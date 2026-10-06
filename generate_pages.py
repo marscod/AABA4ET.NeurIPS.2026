@@ -1313,7 +1313,7 @@ past_body = f"""  <section class="page-section">
 (ROOT / "faq.html").write_text(page(
     "FAQ — AABA4ET NeurIPS 2026", "faq", faq_body,
     hero_title="FAQ",
-    hero_lede="Registration, attendance, visas, publication, and author changes for accepted papers",
+    hero_lede="Registration, attendance, visas, publication questions for accepted papers",
     path="faq.html",
     description=(
         "Frequently asked questions about registration, in-person attendance, visas, paper "
