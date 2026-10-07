@@ -651,7 +651,8 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 - NeurIPS registration is sold out publicly. Each accepted paper has one author registration slot, which goes to the first author to register: https://neurips.cc/Conferences/2026/AuthorRegistration
 - The NeurIPS account email must match the OpenReview email; contact the organizers to use a different account.
 - Presentations are in person in principle; remote poster presentations are unlikely and not guaranteed.
-- Publication is optional: authors may post on arXiv (linked from the site) or upload a camera-ready to OpenReview, using the NeurIPS template.
+- Camera-ready: upload the final version via OpenReview by October 30, using the NeurIPS template; no page-count requirement.
+- Publication is optional: on request, organizers can make the OpenReview page public and link it from the accepted papers list, or link a separate arXiv preprint.
 - Contact: neurips26ws-aaba4et-organizer@googlegroups.com
 - Visa information: https://neurips.cc/Conferences/2026/Visa
 - FAQ page: {SITE_URL}/faq.html
@@ -903,28 +904,29 @@ FAQ_SECTIONS = [
         "Paper publication",
         [
             (
-                "When should I submit the camera-ready version?",
+                "By when should I submit the camera-ready version?",
                 [
-                    "For our workshop, authors decide whether to publish their papers. We will "
-                    "post the list of accepted papers on this website shortly.",
-                    "If you wish to have your paper published, please contact the organizers and "
-                    "let us know your preferred method of publication. We anticipate two options:",
-                    "<ol>\n"
-                    "              <li>Publish separately, for example on arXiv, and we link to it from our website.</li>\n"
-                    "              <li>Upload the camera-ready version to OpenReview and we link to it.</li>\n"
-                    "            </ol>",
-                    "There are no specific page-count requirements for the camera-ready version. "
-                    "We expect authors to use the NeurIPS template as is. If you plan to use a "
-                    "different template, please consider option 1 (for example, arXiv).",
+                    "Please upload the final version via OpenReview by October 30. We expect you "
+                    "to use the NeurIPS template as is. There are no specific page-count "
+                    "requirements for the camera-ready version.",
+                ],
+            ),
+            (
+                "How will the papers be published?",
+                [
+                    "If you wish, the organizer can set your OpenReview submission page to "
+                    "“public” and include a link to your OpenReview submission in the list of "
+                    "accepted papers scheduled for future publication. It is also possible to "
+                    "include a link to a separately uploaded arXiv preprint. Please contact the "
+                    "organizer.",
                 ],
             ),
             (
                 "Is it possible to add or remove co-authors from a paper?",
                 [
-                    "Please send the organizers the names of the authors to be added or removed, "
-                    "and we will make the corrections in OpenReview.",
-                    "If an added co-author will be presenting in person, please let us know, as "
-                    "additional registration steps will be required.",
+                    "Authors can modify their OpenReview registration details.",
+                    "If an added author wishes to attend in person and present, please notify the "
+                    "organizers, as additional registration steps may be required.",
                 ],
             ),
         ],
