@@ -603,6 +603,7 @@ Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages s
 - Paper length: 4 pages, NeurIPS style
 - Submission deadline: August 31, 2026 (Anywhere on Earth / AoE)
 - Acceptance notification: September 29, 2026
+- Camera-ready deadline: October 30, 2026 (AoE)
 - Submit: {OPENREVIEW}
 - OpenReview group: NeurIPS.cc/2026/Workshop/AABA4ET
 
@@ -644,6 +645,7 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 |------|-----------|
 | Aug 31, 2026 | Submission deadline |
 | Sep 29, 2026 | Acceptance notification |
+| Oct 30, 2026 | Camera-ready deadline |
 | Dec 11, 2026 | Workshop day |
 
 ## Registration and attendance
@@ -690,7 +692,7 @@ home_body = f"""  <header class="hero">
   <div class="update">
     <div class="wrap">
       <span class="update__label">Update</span>
-      <p>{ICON_CALENDAR} <strong>Workshop date confirmed:</strong> December 11, 2026 · Sydney. Submissions open through August 31, 2026 (AoE).</p>
+      <p>{ICON_CALENDAR} <strong>Camera-ready deadline:</strong> Camera-ready versions of accepted papers are due October 30, 2026 (AoE).</p>
     </div>
   </div>
 
@@ -774,6 +776,10 @@ home_body = f"""  <header class="hero">
           <strong>Sep 29, 2026</strong>
           <span>Acceptance notification</span>
         </div>
+        <div class="date-item">
+          <strong>Oct 30, 2026</strong>
+          <span>Camera-ready deadline</span>
+        </div>
 {WORKSHOP_DATE_ITEM}
       </div>
     </div>
@@ -837,6 +843,10 @@ cfp_body = f"""  <section class="page-section">
         <div class="date-item">
           <strong>Sep 29, 2026</strong>
           <span>Acceptance notification (AoE)</span>
+        </div>
+        <div class="date-item">
+          <strong>Oct 30, 2026</strong>
+          <span>Camera-ready deadline (AoE)</span>
         </div>
 {WORKSHOP_DATE_ITEM}
       </div>

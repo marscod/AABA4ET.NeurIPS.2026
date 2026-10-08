@@ -17,6 +17,7 @@ Google Sites at https://sites.google.com/view/aaba4et embeds this GitHub Pages s
 - Paper length: 4 pages, NeurIPS style
 - Submission deadline: August 31, 2026 (Anywhere on Earth / AoE)
 - Acceptance notification: September 29, 2026
+- Camera-ready deadline: October 30, 2026 (AoE)
 - Submit: https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/AABA4ET
 - OpenReview group: NeurIPS.cc/2026/Workshop/AABA4ET
 
@@ -63,6 +64,7 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 |------|-----------|
 | Aug 31, 2026 | Submission deadline |
 | Sep 29, 2026 | Acceptance notification |
+| Oct 30, 2026 | Camera-ready deadline |
 | Dec 11, 2026 | Workshop day |
 
 ## Registration and attendance
