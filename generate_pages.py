@@ -653,7 +653,7 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 - NeurIPS registration is sold out publicly. Each accepted paper has one author registration slot, which goes to the first author to register: https://neurips.cc/Conferences/2026/AuthorRegistration
 - The NeurIPS account email must match the OpenReview email; contact the organizers to use a different account.
 - Presentations are in person in principle; remote poster presentations are unlikely and not guaranteed.
-- Camera-ready: upload the final version via OpenReview by October 30, using the NeurIPS template; no page-count requirement.
+- Camera-ready: upload the final version via OpenReview by October 30, using the NeurIPS template; limited to 5 pages to allow for responses to peer review comments, with differences from the submitted manuscript kept to approximately 10%.
 - Publication is optional: on request, organizers can make the OpenReview page public and link it from the accepted papers list, or link a separate arXiv preprint.
 - Contact: neurips26ws-aaba4et-organizer@googlegroups.com
 - Visa information: https://neurips.cc/Conferences/2026/Visa
@@ -917,8 +917,9 @@ FAQ_SECTIONS = [
                 "By when should I submit the camera-ready version?",
                 [
                     "Please upload the final version via OpenReview by October 30. We expect you "
-                    "to use the NeurIPS template as is. There are no specific page-count "
-                    "requirements for the camera-ready version.",
+                    "to use the NeurIPS template as is. The camera-ready version is limited to "
+                    "5 pages to allow for responses to peer review comments. Please ensure that "
+                    "the differences from the submitted manuscript are kept to approximately 10%.",
                 ],
             ),
             (
