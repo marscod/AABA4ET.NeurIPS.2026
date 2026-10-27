@@ -668,7 +668,14 @@ The workshop fosters collaboration toward robust, efficient, and trustworthy Age
 
 
 # —— Home ——
-home_body = f"""  <header class="hero">
+home_body = f"""  <div class="update update--alert" role="region" aria-label="Announcement">
+    <div class="wrap">
+      <span class="update__label">Announcement</span>
+      <p><strong>Travel Grant Application Now Open (Deadline: Oct. 26 AoE)</strong> <a href="https://forms.cloud.microsoft/r/TsjHNdhYjV" target="_blank" rel="noopener">Apply here</a> · Please refer to the email we sent for details.</p>
+    </div>
+  </div>
+
+  <header class="hero">
     <div class="hero__media" aria-hidden="true"></div>
     <div class="hero__veil" aria-hidden="true"></div>
     <div class="wrap hero__inner">
