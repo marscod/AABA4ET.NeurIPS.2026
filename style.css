@@ -223,6 +223,16 @@ code {
   flex-shrink: 0;
   color: #d7f6f7;
 }
+.update--alert {
+  background: #f4b740;
+  color: var(--ink);
+}
+.update--alert a {
+  color: var(--ink);
+  font-weight: 700;
+  text-underline-offset: 2px;
+}
+.update--alert a:hover { color: var(--teal-deep); }
 .update__label {
   font-weight: 700;
   letter-spacing: 0.08em;
