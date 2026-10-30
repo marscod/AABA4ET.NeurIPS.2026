@@ -1232,223 +1232,369 @@ accepted_body = """  <section class="page-section">
       <h2>List of Workshop Papers</h2>
       <div class="paper-list">
         <article>
-          <h3>[3] When Should a Generative Agent Request Inspection? Cost-Sensitive Information Actions for Bridge Maintenance</h3>
+          <p class="pid">Paper 3</p>
+          <h3>When Should a Generative Agent Request Inspection? Cost-Sensitive Information Actions for Bridge Maintenance</h3>
+          <p class="authors">Takayuki Shinohara</p>
         </article>
         <article>
-          <h3>[4] OpsBench: A Reliability-Oriented Benchmark for Open-Weight Agents on Internal Enterprise Operations</h3>
+          <p class="pid">Paper 4</p>
+          <h3>OpsBench: A Reliability-Oriented Benchmark for Open-Weight Agents on Internal Enterprise Operations</h3>
+          <p class="authors">Willy Fitra Hendria</p>
         </article>
         <article>
-          <h3>[10] Cerebro: An Enterprise Language Model for Agentic Tool Use</h3>
+          <p class="pid">Paper 10</p>
+          <h3>Cerebro: An Enterprise Language Model for Agentic Tool Use</h3>
+          <p class="authors">Zixiang Chen, Sufeng Niu, Yingchi Liu, Wenting Zhao, Akshara Prabhakar, Shubham Mehrotra, Bin Bi, Zhujun Lan, Katherine Tan, Mohammad Ramezanali, Tulika Manoj Awalgaonkar, Monojit Banerjee, Jielin Qiu, Shiva Kumar Pentyala, Zhepeng Cen, Anupam Tripathi, Ali Ziaei, Regunathan Radhakrishnan, Darvish Lee Shadravan, Shelby Heinecke, Sitaram Asur, silvio savarese, James Zhu, Phil Mui, Huan Wang</p>
         </article>
         <article>
-          <h3>[12] From Enterprise Pipelines to Agent Context: Distilling Compact Models for Schema Lineage</h3>
+          <p class="pid">Paper 12</p>
+          <h3>From Enterprise Pipelines to Agent Context: Distilling Compact Models for Schema Lineage</h3>
+          <p class="authors">Yi-Wei Chen, Jiaqi Yin, Meng-Lung Lee, Xiya Liu</p>
         </article>
         <article>
-          <h3>[14] Diversity by Construction: Grounded Question Generation for Agentic Commerce Memory</h3>
+          <p class="pid">Paper 14</p>
+          <h3>Diversity by Construction: Grounded Question Generation for Agentic Commerce Memory</h3>
+          <p class="authors">Mario Michael Krell, Ellen Ma, Sebastian Zuba, Marcus Yearwood</p>
         </article>
         <article>
-          <h3>[15] AgentFinVQA: An Auditable, On-Premise Multi-Agent Pipeline for Financial Chart QA</h3>
+          <p class="pid">Paper 15</p>
+          <h3>AgentFinVQA: An Auditable, On-Premise Multi-Agent Pipeline for Financial Chart QA</h3>
+          <p class="authors">Aravind Narayanan, Shaina Raza</p>
         </article>
         <article>
-          <h3>[17] kRAIG: A Natural Language-Driven Agent for Automated DataOps Pipeline Generation</h3>
+          <p class="pid">Paper 17</p>
+          <h3>kRAIG: A Natural Language-Driven Agent for Automated DataOps Pipeline Generation</h3>
+          <p class="authors">Kai Cheung, Lichi Li, Rohan Siva, Ganesh Sundaram, Shakthi Balasubramanian</p>
         </article>
         <article>
-          <h3>[18] Evidence Guided Adaptive Search for Helping AI Agents Find Missing Facts Before Answering</h3>
+          <p class="pid">Paper 18</p>
+          <h3>Evidence Guided Adaptive Search for Helping AI Agents Find Missing Facts Before Answering</h3>
+          <p class="authors">Akhil Kasturi, Min Cheng, Huilin Lu, Bingrou Zhou, Qiuying Lin, Ge Shi, Na Zhang</p>
         </article>
         <article>
-          <h3>[20] Stage: Stateful Translation to Agentic Graph Execution with Policy-Scoped Context and Deterministic Control</h3>
+          <p class="pid">Paper 20</p>
+          <h3>Stage: Stateful Translation to Agentic Graph Execution with Policy-Scoped Context and Deterministic Control</h3>
+          <p class="authors">Changjia Chen, Mengxi luo, An Cao, Zirong Huang, Wanyi Dai, Shixiong Gao, John Chen, Bo Wan</p>
         </article>
         <article>
-          <h3>[21] PointerBench: A Diagnostic Benchmark for Fine-Grained GUI Grounding</h3>
+          <p class="pid">Paper 21</p>
+          <h3>PointerBench: A Diagnostic Benchmark for Fine-Grained GUI Grounding</h3>
+          <p class="authors">Valentino Sacco, Saurabh Pandey, Alexander Florian Jercher, Maximilian Schilling</p>
         </article>
         <article>
-          <h3>[22] Hallucination Detection in Black-Box LLMs Using Complementary Uncertainty Signals</h3>
+          <p class="pid">Paper 22</p>
+          <h3>Hallucination Detection in Black-Box LLMs Using Complementary Uncertainty Signals</h3>
+          <p class="authors">Urja Pawar, Rajitha Ramanayake, Owen O'Neill, Nabeel Kemal, Abhishek Mandal, Houssem Chatbri, Christopher Martin</p>
         </article>
         <article>
-          <h3>[23] Emergent Misaligned Communication in Long-Horizon Multi-Agent LLM Commerce</h3>
+          <p class="pid">Paper 23</p>
+          <h3>Emergent Misaligned Communication in Long-Horizon Multi-Agent LLM Commerce</h3>
+          <p class="authors">Zeyuan Li, Lukas Petersson, Alessandro Acquisti, Michiel A. Bakker</p>
         </article>
         <article>
-          <h3>[24] FiCo: Find-then-Compute for Corpus-Level Spreadsheet Question Answering</h3>
+          <p class="pid">Paper 24</p>
+          <h3>FiCo: Find-then-Compute for Corpus-Level Spreadsheet Question Answering</h3>
+          <p class="authors">Sandarsita Guntupalli, Lu He, Kang Li</p>
         </article>
         <article>
-          <h3>[25] Esmeralda: A Benchmark for Enterprise Service Management Agent Readiness</h3>
+          <p class="pid">Paper 25</p>
+          <h3>Esmeralda: A Benchmark for Enterprise Service Management Agent Readiness</h3>
+          <p class="authors">Emily Chen, Patrice Bechard, Orlando Marquez Ayala, Manas Jiten Gandhi, Kavya Sriram, Jordan Skelton, Keerthana Gopinathan, Maggie Baird, Nidhi Kumari, Maria Kossenko, Ranjani Iyer, Roberto Bacci, Sagar Davasam, Sridhar Krishna Nemala, Srinivas Sunkara, Sai Rajeswar</p>
         </article>
         <article>
-          <h3>[27] CIPHER: A Decoupled Exploration-Selection Framework for Test-Time Scaling of Data Science Agents</h3>
+          <p class="pid">Paper 27</p>
+          <h3>CIPHER: A Decoupled Exploration-Selection Framework for Test-Time Scaling of Data Science Agents</h3>
+          <p class="authors">Maxime Heuillet, Sharadind Peddiraju</p>
         </article>
         <article>
-          <h3>[28] Iterate on an LLM, Serve on an SLM</h3>
+          <p class="pid">Paper 28</p>
+          <h3>Iterate on an LLM, Serve on an SLM</h3>
+          <p class="authors">Keegan Wang</p>
         </article>
         <article>
-          <h3>[29] From Manuals to Worlds: Synthesizing Executable Enterprise Environments for LLM Agents</h3>
+          <p class="pid">Paper 29</p>
+          <h3>From Manuals to Worlds: Synthesizing Executable Enterprise Environments for LLM Agents</h3>
+          <p class="authors">Harsh Vishwakarma, K.N Ajay Shastry, Pranoy Panda, Vartika Sengar, Ankush Agarwal, Suraj Mahadev Nagaje, Ganesh S, Shrey Satapara, Sanika Wagh, Pranav Bhagat, Mohit Meena, Ishan Jindal, Mahesh Chandran, Satoshi Nakashima, Hiromichi Kobashi</p>
         </article>
         <article>
-          <h3>[30] TS-AgentBench: Necessity vs. Robustness in Agentic Forecasting</h3>
+          <p class="pid">Paper 30</p>
+          <h3>TS-AgentBench: Necessity vs. Robustness in Agentic Forecasting</h3>
+          <p class="authors">Malik Tiomoko, Youssef Attia El Hili, Bahaeddine Abdessalem, Ding Wang, Dong Zhiwei, Zehao Xiao, Ambroise Odonnat, Shifeng Xie, Lei Zan, Jiale Zheng, Tareq Si Salem, Keli Zhang, Jianfeng Zhang, Lujia Pan</p>
         </article>
         <article>
-          <h3>[33] VDGR-RAG: Vectors, Directories, Graphs, and Reflection Are All You Need for Unified Reasoning over Hierarchical Enterprise Knowledge</h3>
+          <p class="pid">Paper 33</p>
+          <h3>VDGR-RAG: Vectors, Directories, Graphs, and Reflection Are All You Need for Unified Reasoning over Hierarchical Enterprise Knowledge</h3>
+          <p class="authors">wenqi chen, Haofei Yang, Rui Yang, Li Fangming</p>
         </article>
         <article>
-          <h3>[35] Controlled Perturbation Reveals Grounding and Faithfulness Failures in Computer-Use Agents</h3>
+          <p class="pid">Paper 35</p>
+          <h3>Controlled Perturbation Reveals Grounding and Faithfulness Failures in Computer-Use Agents</h3>
+          <p class="authors">Yangyue Wang, Harsh Sikka, Yash Mathur, Tony Zhou, Jinu Nyachhyon, Pranav Guruprasad</p>
         </article>
         <article>
-          <h3>[38] AgentScript-Eval: Benchmarking LLMs and Agents for Code Generation in an Enterprise DSL</h3>
+          <p class="pid">Paper 38</p>
+          <h3>AgentScript-Eval: Benchmarking LLMs and Agents for Code Generation in an Enterprise DSL</h3>
+          <p class="authors">Dipin Khati, Shubham Mehrotra, Bin Bi, Zhou Yu, Denys Poshyvanyk, James Zhu, Sitaram Asur, Phil Mui</p>
         </article>
         <article>
-          <h3>[39] Who's Asking? A Role-Conditioned Benchmark for Operational Reasoning in Enterprise Agents</h3>
+          <p class="pid">Paper 39</p>
+          <h3>Who’s Asking? A Role-Conditioned Benchmark for Operational Reasoning in Enterprise Agents</h3>
+          <p class="authors">Trishala Jayesh Ahalpara, Jesica Bauer</p>
         </article>
         <article>
-          <h3>[41] Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?</h3>
+          <p class="pid">Paper 41</p>
+          <h3>Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions?</h3>
+          <p class="authors">Abhishek Pillai, Samir kumar nayak, Yuan Chen</p>
         </article>
         <article>
-          <h3>[42] AIM: Adversarial Interface Manipulation</h3>
+          <p class="pid">Paper 42</p>
+          <h3>AIM: Adversarial Interface Manipulation</h3>
+          <p class="authors">Mareks Woodside, Lawrence Keunho Jang, Ruslan Salakhutdinov</p>
         </article>
         <article>
-          <h3>[43] Toward Reliable Agentic RAG: Lessons from Multi-Run Evaluation</h3>
+          <p class="pid">Paper 43</p>
+          <h3>Agentic Systems Need Multi-Run Evaluation: A Study of Retrieval and Response Variability in a Deployed Enterprise RAG System</h3>
+          <p class="authors">Karan Gupta, Sumit Bhatia, Yunyao Li</p>
         </article>
         <article>
-          <h3>[44] Don't Prompt, Graph It: Reliable SOP Compliance via Workflow Graphs</h3>
+          <p class="pid">Paper 44</p>
+          <h3>Don't Prompt, Graph It: Reliable SOP Compliance via Workflow Graphs</h3>
+          <p class="authors">Rahul Ghosh, Long Chen, Hari Prasanna Das, Divya Bhargavi, Vidya Sagar Ravipati</p>
         </article>
         <article>
-          <h3>[45] UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training</h3>
+          <p class="pid">Paper 45</p>
+          <h3>UserProxyBench: Evaluating LLM User Simulators for Agent Benchmarks and Training</h3>
+          <p class="authors">Ashish Jain, Armaan Sandhu</p>
         </article>
         <article>
-          <h3>[47] Can an Injected-Failure Benchmark Pick Your Monitor? A Four-Part Validity Audit for Enterprise Agent Deployment</h3>
+          <p class="pid">Paper 47</p>
+          <h3>Can an Injected-Failure Benchmark Pick Your Monitor? A Four-Part Validity Audit for Enterprise Agent Deployment</h3>
+          <p class="authors">Dev Utkarsh Pal, Arpan Verma, Chandan Sah, Aditya Upadhyay, Harshit Gupta</p>
         </article>
         <article>
-          <h3>[48] Break It to Align It: Annotation-Free Medical Safety Alignment via Preference Inversion</h3>
+          <p class="pid">Paper 48</p>
+          <h3>Break It to Align It: Preference Inversion for Domain-Specific Agents Safety Alignment</h3>
+          <p class="authors">Seungyoun Lee, Seohyun Lee, Akihiro Sunagawa</p>
         </article>
         <article>
-          <h3>[49] From Document QA to Enterprise Tool Use: A Paired Outcome-and-Trajectory Study</h3>
+          <p class="pid">Paper 49</p>
+          <h3>From Document QA to Enterprise Tool Use: A Paired Outcome-and-Trajectory Study</h3>
+          <p class="authors">Sushant Mehta</p>
         </article>
         <article>
-          <h3>[53] Agentic Search for Deployment-Specific Configuration of Promptable Detectors</h3>
+          <p class="pid">Paper 53</p>
+          <h3>Agentic Search for Deployment-Specific Configuration of Promptable Detectors</h3>
+          <p class="authors">Kyeongryeol Go</p>
         </article>
         <article>
-          <h3>[55] PrecisionCUA: Iterative Visual Refinement for Pixel-Precise Cursor Grounding in Code Editors</h3>
+          <p class="pid">Paper 55</p>
+          <h3>PrecisionCUA: Iterative Visual Refinement for Pixel-Precise Cursor Grounding in Code Editors</h3>
+          <p class="authors">Himangi Mittal, Gaurav Mittal, Nelson Daniel Troncoso, Yu Hu</p>
         </article>
         <article>
-          <h3>[56] Where Does the Low-Cost Model Tier Break in Enterprise Agentic Workflows?</h3>
+          <p class="pid">Paper 56</p>
+          <h3>Where Does the Low-Cost Model Tier Break in Enterprise Agentic Workflows?</h3>
+          <p class="authors">Zhenyu Zhang, Yuan Ling, Dingyang Chen, Xinyang Shen</p>
         </article>
         <article>
-          <h3>[58] Decoupled Planning and Execution for Trustworthy Agents in Closed-Environment</h3>
+          <p class="pid">Paper 58</p>
+          <h3>Decoupled Planning and Execution for Trustworthy Agents in Closed-Environment</h3>
+          <p class="authors">Monik Raj Behera, Preetam Keshari Nahak, Ajit Kumar Behera, Zahra Taghiyarrenani, Yuantao Fan, Thorsteinn S. Rögnvaldsson</p>
         </article>
         <article>
-          <h3>[60] Asymmetric Federated Agentic Intelligence</h3>
+          <p class="pid">Paper 60</p>
+          <h3>Asymmetric Federated Agentic Intelligence</h3>
+          <p class="authors">Olaf Yunus Laitinen Imanov, Rana Irem Turhan, Isgandar Jafarli</p>
         </article>
         <article>
-          <h3>[61] Constructing an Obligation-Aware Evaluation Corpus for Enterprise Agent Memory</h3>
+          <p class="pid">Paper 61</p>
+          <h3>Constructing an Obligation-Aware Evaluation Corpus for Enterprise Agent Memory</h3>
+          <p class="authors">Jayesh Rathi, Ananya Sane, Rajitha Ramanayake, Pradeep Nallathambi</p>
         </article>
         <article>
-          <h3>[62] Necessary or Sufficient? Evaluating Explanations from Enterprise LLM Decision Systems with Behavioural Interventions</h3>
+          <p class="pid">Paper 62</p>
+          <h3>Necessary or Sufficient? Evaluating Explanations from Enterprise LLM Decision Systems with Behavioural Interventions</h3>
+          <p class="authors">Urja Pawar, Rajitha Ramanayake, Nabeel Kemal, Ashwin Kandath, Owen O'Neill, Guillaume Bourgeon, Houssem Chatbri</p>
         </article>
         <article>
-          <h3>[63] Enterprise-Scale Agentic Classification with a Governed Execution Envelope</h3>
+          <p class="pid">Paper 63</p>
+          <h3>Enterprise-Scale Agentic Classification with a Governed Execution Envelope</h3>
+          <p class="authors">Sruthi Pisipati, Haris Javed</p>
         </article>
         <article>
-          <h3>[64] EnterpriseFact: Where Frontier Agents Fail in Enterprise Fact-Finding</h3>
+          <p class="pid">Paper 64</p>
+          <h3>EnterpriseFact: Where Frontier Agents Fail in Enterprise Fact-Finding</h3>
+          <p class="authors">Md Shariq Farhan, Mohammad Imran Shaikh, Kunal Aggarwal</p>
         </article>
         <article>
-          <h3>[67] Determine: Benchmarking Graph-Driven Agentic Movie Making</h3>
+          <p class="pid">Paper 67</p>
+          <h3>Determine: Benchmarking Graph-Driven Agentic Movie Making</h3>
+          <p class="authors">Aayush Atul Verma, Hareesh Ravi, Ishan Rajendrakumar Dave, YZ Yang, Ajinkya Kale, Manuel Brack</p>
         </article>
         <article>
-          <h3>[69] Staying on Task: Testing the Foundations of Long-Horizon Agent Reliability</h3>
+          <p class="pid">Paper 69</p>
+          <h3>Staying on Task: Testing the Foundations of Long-Horizon Agent Reliability</h3>
+          <p class="authors">Jeffrey Willette, Krishna C Puvvada, Boris Ginsburg</p>
         </article>
         <article>
-          <h3>[71] NovaMart: A Causally Consistent Simulated Enterprise for Measuring Tribal Knowledge Extraction</h3>
+          <p class="pid">Paper 71</p>
+          <h3>NovaMart: A Causally Consistent Simulated Enterprise for Measuring Tribal Knowledge Extraction</h3>
+          <p class="authors">Susnato Dhar, Srijan Saket, Siddharth Seth, Rishabh Mehrotra</p>
         </article>
         <article>
-          <h3>[72] ASIRF: An Agentic Framework for Context-Dependent Sensitive Information Redaction</h3>
+          <p class="pid">Paper 72</p>
+          <h3>ASIRF: An Agentic Framework for Context-Dependent Sensitive Information Redaction</h3>
+          <p class="authors">Sudha Priyadarshini, Mohamed Chahine Ghanem</p>
         </article>
         <article>
-          <h3>[73] VerifierContractBench: Auditing Safety Regressions in Evaluators for Enterprise Web Agents</h3>
+          <p class="pid">Paper 73</p>
+          <h3>VerifierContractBench: Auditing Safety Regressions in Evaluators for Enterprise Web Agents</h3>
+          <p class="authors">Lakshya Narula, Saurabh Tripathi, Lily Bharati Sharma, Nikhil Rao</p>
         </article>
         <article>
-          <h3>[75] STRATA: Automated Construction of Professional Tasks and Rubrics for Agent Evaluation</h3>
+          <p class="pid">Paper 75</p>
+          <h3>STRATA: Automated Construction of Professional Tasks and Rubrics for Agent Evaluation</h3>
+          <p class="authors">Fenil Bardoliya, Shivali Dalmia, Abhishek Mukherji</p>
         </article>
         <article>
-          <h3>[76] BlueFin: Benchmarking LLM Agents on Financial Modeling</h3>
+          <p class="pid">Paper 76</p>
+          <h3>BlueFin: Benchmarking LLM Agents on Financial Modeling</h3>
+          <p class="authors">Srivatsa R Kundurthy, Clara Na, Colton Moraine, Anoushka Mohta, Case Winter, Jeremiah Giordani, Michelle Hui, Aashna Goel, George Fang, John Ling, Emma Strubell, Zach Kirshner</p>
         </article>
         <article>
-          <h3>[77] DockRepair: Evaluating Safe Abstention in Agentic Docker Compose Remediation</h3>
+          <p class="pid">Paper 77</p>
+          <h3>DockRepair: Evaluating Safe Abstention in Agentic Docker Compose Remediation</h3>
+          <p class="authors">Nihanth Tatikonda, Sriram Gutlapalli, Apurva Reddy, Shanaya Pal, Lashika Kapoor</p>
         </article>
         <article>
-          <h3>[78] Taking the PULSE of Enterprise Workflows: Evaluating Persistent Project-State Understanding</h3>
+          <p class="pid">Paper 78</p>
+          <h3>Taking the PULSE of Enterprise Workflows: Evaluating Persistent Project-State Understanding</h3>
+          <p class="authors">Jiexin Ding, Lin Ai, Adam Davies, Scott Counts</p>
         </article>
         <article>
-          <h3>[79] Refusal Is Not Action Safety: Behavioral and Mechanistic Evidence from Tool-Using LLM Agents</h3>
+          <p class="pid">Paper 79</p>
+          <h3>Refusal Is Not Action Safety: Behavioral and Mechanistic Evidence from Tool-Using LLM Agents</h3>
+          <p class="authors">Ekagra Gupta, Raj Saha, Adam Al Gharib, Aniekan-abasi Inyang</p>
         </article>
         <article>
-          <h3>[81] Verified Alt-Text for Product Catalogs: A Five-Agent Framework</h3>
+          <p class="pid">Paper 81</p>
+          <h3>Verified Alt-Text for Product Catalogs: A Five-Agent Framework</h3>
+          <p class="authors">Luis Miranda, Sergio Orellana, Daniel Alejandro Smith De La Carrera, Gonzalo Oyanedel-Vial</p>
         </article>
         <article>
-          <h3>[82] Can LLM Agents Remain Compliant Under Real-World Pressure?</h3>
+          <p class="pid">Paper 82</p>
+          <h3>Can LLM Agents Remain Compliant Under Real-World Pressure?</h3>
+          <p class="authors">Lanchen Song, Philippe Martin Wyder, Daniel Jaroslawicz, Judah Goldfeder, Karime Maamari</p>
         </article>
         <article>
-          <h3>[83] Evaluating LLM Agents on Multi-Modal Professional Finance Workflows</h3>
+          <p class="pid">Paper 83</p>
+          <h3>Evaluating LLM Agents on Multi-Modal Professional Finance Workflows</h3>
+          <p class="authors">Jeremiah Giordani, Michelle Hui, Clara Na, Srivatsa R Kundurthy, Colton Moraine, Anoushka Mohta, John Ling, Zach Kirshner</p>
         </article>
         <article>
-          <h3>[84] Frontier Work: Benchmarking AI Agents on End-to-End Professional Workflows</h3>
+          <p class="pid">Paper 84</p>
+          <h3>Frontier Work: Benchmarking AI Agents on End-to-End Professional Workflows</h3>
+          <p class="authors">Sushant Mehta</p>
         </article>
         <article>
-          <h3>[85] TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator</h3>
+          <p class="pid">Paper 85</p>
+          <h3>TOUMAII: A 4.5M-Pair Tool-Calling Preference Dataset and Its Source-Agnostic Generator</h3>
+          <p class="authors">Moritz Pötzsch, Andrea Gentilini, Lisa Rossgoderer, Tom Osterfeld, Kesava Prasad Sanjivi Arul, Swanand Ravindra Kadhe</p>
         </article>
         <article>
-          <h3>[86] CentaurBench: Benchmarking LLM Capabilities on Augmenting vs. Automating Real-World Work Tasks</h3>
+          <p class="pid">Paper 86</p>
+          <h3>CentaurBench: Benchmarking LLM Capabilities on Augmenting vs. Automating Real-World Work Tasks</h3>
+          <p class="authors">Pattaraphon Kenny Wongchamcharoen, Kris Gulati, Min Min Fong, Abhishek Nagaraj</p>
         </article>
         <article>
-          <h3>[87] How Far Are Synthetic Text-to-SQL Benchmarks from Enterprise Production Traffic?</h3>
+          <p class="pid">Paper 87</p>
+          <h3>How Far Are Synthetic Text-to-SQL Benchmarks from Enterprise Production Traffic?</h3>
+          <p class="authors">Victor Arantes, Thiago Pedroso de Jesus, Vinicius Alboneti Aguiar, Sávio Salvarino Teles de Oliveira</p>
         </article>
         <article>
-          <h3>[88] FORAGE: Related Works Prediction as a Benchmark for Agentic Retrieval</h3>
+          <p class="pid">Paper 88</p>
+          <h3>FORAGE: Related Works Prediction as a Benchmark for Agentic Retrieval</h3>
+          <p class="authors">Aryaman Jain, Suvrat Bhooshan, Parth Sarthi</p>
         </article>
         <article>
-          <h3>[89] Unified Agentic Video Editing Across Levels of Complexity and Creativity</h3>
+          <p class="pid">Paper 89</p>
+          <h3>Unified Agentic Video Editing Across Levels of Complexity and Creativity</h3>
+          <p class="authors">Surabhi S Nath, Kim Ferres, Milan Petrovic, Lion Schulz</p>
         </article>
         <article>
-          <h3>[90] SLATE: A Large-Scale Benchmark for Long-Horizon API Selection in Enterprise Tool Use</h3>
+          <p class="pid">Paper 90</p>
+          <h3>SLATE: A Large-Scale Benchmark for Long-Horizon API Selection in Enterprise Tool Use</h3>
+          <p class="authors">Ge Shi, Rongzhe Wei, Min Cheng, Leman Akoglu, Vaibhav Gorde, Sarthak Ghosh, Na Zhang, Pan Li</p>
         </article>
         <article>
-          <h3>[91] AI-BAAM: AI-Driven Bank Statement Analytics as Alternative Data for Malaysian MSME Credit Scoring</h3>
+          <p class="pid">Paper 91</p>
+          <h3>AI-BAAM: AI-Driven Bank Statement Analytics as Alternative Data for Malaysian MSME Credit Scoring</h3>
+          <p class="authors">Chun Chet Ng, Zhen Hao Chu, Jia Yu Lim, Low Wei Zeng</p>
         </article>
         <article>
-          <h3>[92] PRISM: Prompt-Refined In-Context System Modeling for Financial Retrieval</h3>
+          <p class="pid">Paper 92</p>
+          <h3>PRISM: Prompt-Refined In-Context System Modeling for Financial Retrieval</h3>
+          <p class="authors">Chun Chet Ng, Jia Yu Lim, Zhen Hao Chu, Yixi Zhou, Low Wei Zeng</p>
         </article>
         <article>
-          <h3>[93] When Guardrails Look Effective: Construct-Valid Evaluation for Multi-Agent Enterprise Commerce</h3>
+          <p class="pid">Paper 93</p>
+          <h3>When Guardrails Look Effective: Construct-Valid Evaluation for Multi-Agent Enterprise Commerce</h3>
+          <p class="authors">Peiying Zhu, Sidi Chang</p>
         </article>
         <article>
-          <h3>[96] FDE-Bench: Evaluating LLM Agents for Deployment Environment Configuration</h3>
+          <p class="pid">Paper 96</p>
+          <h3>FDE-Bench: Evaluating LLM Agents for Deployment Environment Configuration</h3>
+          <p class="authors">Weihang Ding, Junfei Zhan, Yueting Li, Qirong Guo</p>
         </article>
         <article>
-          <h3>[99] From LLM Control to Environment-Adaptive Agents: Sample-Efficient RL for Real-World HVAC Control</h3>
+          <p class="pid">Paper 99</p>
+          <h3>From LLM Control to Environment-Adaptive Agents: Sample-Efficient RL for Real-World HVAC Control</h3>
+          <p class="authors">Toki Miyake, Hiroaki Murakami, Keiichiro Taniguchi, Katsuya Koike, Changyo Han, Shizuku Iida, Yoshihiro Kawahara</p>
         </article>
         <article>
-          <h3>[100] Deep Research Agents for Shell Company Screening</h3>
+          <p class="pid">Paper 100</p>
+          <h3>Deep Research Agents for Shell Company Screening</h3>
+          <p class="authors">Feihan Lin, Xiao-Yang Liu</p>
         </article>
         <article>
-          <h3>[101] EnvOS: Certified Evaluation of Enterprise Agents in Changing Environments</h3>
+          <p class="pid">Paper 101</p>
+          <h3>EnvOS: Certified Evaluation of Enterprise Agents in Changing Environments</h3>
+          <p class="authors">Niharika singh, Athira Gopal, Ankush Kadu, Arpit Jain, Aswanth Krishnan</p>
         </article>
         <article>
-          <h3>[102] A Real-Robot Dataset for Multi-Stage Shoe Inspection Handling</h3>
+          <p class="pid">Paper 102</p>
+          <h3>A Real-Robot Dataset for Multi-Stage Shoe Inspection Handling</h3>
+          <p class="authors">Kazuki Takahashi, Shoichi Ohmoto, Hiroaki Murakami, Mitsuhiro Kamezaki, Yoshihiro Kawahara, Norimasa Kobori</p>
         </article>
         <article>
-          <h3>[103] Agentic Validation and Repair of Network Automation Programs with the Compiler as Judge</h3>
+          <p class="pid">Paper 103</p>
+          <h3>Agentic Validation and Repair of Network Automation Programs with the Compiler as Judge</h3>
+          <p class="authors">Zahra Bakhtiari</p>
         </article>
         <article>
-          <h3>[104] Westworld Finance Diligence Bench: Evaluating AI Agents on Long-Horizon Enterprise Work</h3>
+          <p class="pid">Paper 104</p>
+          <h3>Westworld Finance Diligence Bench: Evaluating AI Agents on Long-Horizon Enterprise Work</h3>
+          <p class="authors">Robert Alward, Alina Hyk, Victoria Knapp-Pérez, Wyatt Marshall</p>
         </article>
         <article>
-          <h3>[105] DEALTRACE: Localizing and Intervening on Failures in Agentic Financial Reasoning</h3>
+          <p class="pid">Paper 105</p>
+          <h3>DEALTRACE: Localizing and Intervening on Failures in Agentic Financial Reasoning</h3>
+          <p class="authors">Alina Hyk, Wyatt Marshall</p>
         </article>
         <article>
-          <h3>[106] WarehouseAI: A Closed-Loop Multi-Agent Framework for Industrial Operations Planning</h3>
+          <p class="pid">Paper 106</p>
+          <h3>WarehouseAI: A Closed-Loop Multi-Agent Framework for Industrial Operations Planning</h3>
+          <p class="authors">Himabindu Thogaru, Anirudh Deodhar</p>
         </article>
         <article>
-          <h3>[107] CLAIMRECEIPT: Auditable Evidence Contracts for Enterprise Agent Benchmarks</h3>
+          <p class="pid">Paper 107</p>
+          <h3>CLAIMRECEIPT: Auditable Evidence Contracts for Enterprise Agent Benchmarks</h3>
+          <p class="authors">Peiying Zhu, Sidi Chang</p>
         </article>
         <article>
-          <h3>[108] Towards continual in-context learning via training Cartridges at test time</h3>
+          <p class="pid">Paper 108</p>
+          <h3>Towards continual in-context learning via training Cartridges at test time</h3>
+          <p class="authors">Hongyi Huang, Kaitlyn Wang, Ajay Anubolu, Shayan Talaei, Arshia Soltani Moakhar, Azalia Mirhoseini, Amin Saberi</p>
         </article>
       </div>
     </div>
