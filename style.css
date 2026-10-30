@@ -856,6 +856,11 @@ body.past-sub .page-hero__media {
   margin-bottom: 0.25rem;
   letter-spacing: -0.01em;
 }
+.paper-list .authors {
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
 .pc-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
