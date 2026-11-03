@@ -1081,6 +1081,17 @@ speakers_body = f"""  <section class="page-section">
 {social_icons("https://bertievidgen.com/", "https://www.linkedin.com/in/bertie-vidgen-001/", "https://scholar.google.com/citations?user=yRhnVoIAAAAJ&hl=en")}
         </div>
       </article>
+
+      <article class="person-full speaker">
+        <img class="person-photo" src="images/speakers/liang-zheng.jpg" alt="Liang Zheng" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          {person_name("Liang Zheng", "https://zheng-lab-anu.github.io/")}
+          <p class="role">Professor, University of Sydney · Research Scientist, Canva</p>
+          <p class="title-talk">Title: TBD</p>
+          <p>Liang Zheng is a Professor at the University of Sydney and a Research Scientist with Canva. He's interested in representation learning in generative and perceptive AI. His representative works include REPA-E in diffusion training, random erasing data augmentation, and Market-1501 and part-based convolutional baselines in object re-identification. He received multiple fellowships from the Australian Research Council and multiple awards from the international community. He received his PhD and B.S. from Tsinghua University.</p>
+{social_icons("https://zheng-lab-anu.github.io/", "https://www.linkedin.com/in/liang-zheng-76341311a", "https://scholar.google.com/citations?user=vNHqr3oAAAAJ&hl=en")}
+        </div>
+      </article>
     </div>
   </section>
 """
