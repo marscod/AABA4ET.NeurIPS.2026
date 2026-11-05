@@ -65,6 +65,7 @@ def nav(active: str, prefix: str = "") -> str:
         {a("organizers.html", "Organizers", "organizers")}
         {a("accepted-papers.html", "Papers", "accepted")}
         {a("faq.html", "FAQ", "faq")}
+        <a href="{'' if active == 'home' else prefix + 'index.html'}#sponsors">Sponsors</a>
         {a("past.html", "Past", "past")}
       </nav>
     </div>
@@ -83,6 +84,7 @@ def footer(prefix: str = "") -> str:
         <a href="{prefix}organizers.html">Organizers</a>
         <a href="{prefix}accepted-papers.html">Accepted Papers</a>
         <a href="{prefix}faq.html">FAQ</a>
+        <a href="{prefix}index.html#sponsors">Sponsors</a>
         <a href="{prefix}past.html">Past Workshop</a>
       </div>
       <p>2nd Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks · NeurIPS 2026 · Sydney</p>
@@ -800,6 +802,22 @@ home_body = f"""  <header class="hero">
           <a class="btn btn-solid" href="call-for-papers.html">Read the CFP</a>
           <a class="btn btn-ghost" style="border-color:var(--teal);color:var(--teal-deep);background:transparent" href="https://media.neurips.cc/Conferences/NeurIPS2026/Formatting_Instructions_For_NeurIPS_2026.zip" target="_blank" rel="noopener">Paper template</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sponsors" id="sponsors">
+    <div class="wrap">
+      <p class="eyebrow">Sponsors</p>
+      <h2>Thank you to our sponsors</h2>
+      <div class="sponsor-tier">
+        <h3 class="sponsor-tier__label">Student Travel Grant Sponsor</h3>
+        <article class="sponsor">
+          <a class="sponsor__logo" href="https://snorkel.ai/" target="_blank" rel="noopener">
+            <img src="images/sponsors/snorkel-ai.png" alt="Snorkel AI — The Frontier AI Data Lab" width="893" height="286" loading="lazy" />
+          </a>
+          <p class="sponsor__desc">Snorkel AI is the frontier AI data lab helping teams build the data and environments behind high-performing frontier models and agentic AI. Our platform, research, and embedded delivery model combine to create the datasets, environments, evaluation frameworks, and custom solutions that power real-world AI systems.</p>
+        </article>
       </div>
     </div>
   </section>
