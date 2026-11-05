@@ -1210,3 +1210,36 @@ body.past-sub .page-hero__media {
     padding-bottom: max(0px, env(safe-area-inset-bottom));
   }
 }
+
+/* —— Sponsors —— */
+.sponsors { border-top: 1px solid var(--line); scroll-margin-top: 4.5rem; }
+.sponsor-tier {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.75rem;
+}
+.sponsor-tier__label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 1.25rem;
+}
+.sponsor {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 1.5rem 2.25rem;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+}
+.sponsor__logo { display: block; }
+.sponsor__logo img { display: block; width: 100%; height: auto; }
+.sponsor__desc { color: var(--ink-soft); max-width: 62ch; }
+@media (max-width: 720px) {
+  .sponsor { grid-template-columns: 1fr; }
+  .sponsor__logo { max-width: 240px; }
+}
