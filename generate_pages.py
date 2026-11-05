@@ -167,7 +167,7 @@ STEERING = [
     ("Lei Liu", "Fujitsu Research of America, Inc.", "images/organizers/Lei-Liu.jpg", "Senior Research Manager"),
     ("Vardaan Pahuja", "Fujitsu Research of America, Inc.", "images/organizers/vardaan.jpg", "Principal Researcher"),
     ("Hideo Saito", "Keio University", "images/organizers/saito.jpg"),
-    ("Alexandre Drouin", "ServiceNow", "images/organizers/drouin.png"),
+    ("Alexandre Drouin", "Cohere", "images/organizers/drouin.png"),
 ]
 STEERING_GRID = "\n".join(steering_card(*row) for row in STEERING)
 
@@ -1203,8 +1203,8 @@ organizers_body = f"""  <section class="page-section">
         <img class="person-photo" src="images/organizers/drouin.png" alt="Alexandre Drouin" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Alexandre Drouin", "https://www.alexdrouin.com/")}
-          <p class="role">Head of Frontier AI Research, ServiceNow · Adjunct Professor, Laval University &amp; Mila</p>
-          <p>Leads Frontier AI Research at ServiceNow Research. Work focuses on ML for decision-making in complex environments—causal inference, probabilistic forecasting, and LLM-based agents—plus benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for NeurIPS 2026 Evaluations and Datasets track.</p>
+          <p class="role">Senior Research Scientist, Cohere · Adjunct Professor, Laval University &amp; Mila</p>
+          <p>Senior Research Scientist at Cohere, working on the safety and security of AI agents through both evaluations and post-training. Previously led Frontier AI Research at ServiceNow Research, where his work spanned ML for decision-making in complex environments (causal inference, probabilistic forecasting, and LLM-based agents) and benchmarks for browser automation, data analytics, forecasting, security, and robustness. Program Committee for the NeurIPS 2026 Evaluations and Datasets track.</p>
           <p class="expertise"><strong>Expertise:</strong> Agentic systems, benchmarking, decision-making under uncertainty.</p>
 {social_icons("https://www.alexdrouin.com/", "https://linkedin.com/in/drouinalexandre", "https://scholar.google.com/citations?user=LR6aJcEAAAAJ&hl=en")}
         </div>
