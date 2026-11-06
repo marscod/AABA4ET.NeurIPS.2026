@@ -1126,7 +1126,10 @@ panel_body = f"""  <section class="page-section">
       <article class="person-full speaker">
         <img class="person-photo person-photo--portrait" src="images/panelists/mehdi-bahrami.jpg" alt="Mehdi Bahrami" width="160" height="200" loading="lazy" />
         <div class="person-copy">
-          {person_name("Mehdi Bahrami")}
+          <div class="person-heading">
+            <p class="person-kicker">Panel chair</p>
+            {person_name("Mehdi Bahrami")}
+          </div>
           <p class="role">Senior Research Manager, Fujitsu Research of America</p>
           <p>Dr. Mehdi Bahrami is a Senior Research Manager at Fujitsu Research of America, where he leads research on Agentic AI, LLM-based agents, and AI for software engineering. His recent work includes Kozuchi Agent, an open-weight agent framework for autonomous software engineering and repair. His broader research interests include generative AI, LLMs, and applied machine learning.</p>
           <p>Dr. Bahrami has over 15 years of experience in software engineering and industrial AI research, with 30+ technical publications and 34+ granted U.S. patents. He is an ACM Distinguished Speaker and Senior Member of ACM and IEEE, and a recipient of the 2024 IEEE Outstanding Engineer Award for pioneering contributions to generative AI and API automation. His work has also been recognized with multiple industry awards and featured by leading technology media, including MIT Technology Review.</p>
@@ -1152,6 +1155,16 @@ panel_body = f"""  <section class="page-section">
           <p class="role">Director of Research, NVIDIA</p>
           <p>Maarten Van Segbroeck is director of research at NVIDIA, where he leads initiatives at the intersection of synthetic data, privacy, and trustworthy AI. His team develops methods and evaluation frameworks that enable organizations to safely generate, assess, and deploy high-quality synthetic datasets for advanced AI systems. Before joining NVIDIA, Maarten was VP of applied science at Gretel, helping enterprises adopt synthetic data solutions across regulated domains. He previously drove research efforts at Amazon across AWS and Alexa AI. Maarten holds a Ph.D. in electrical engineering from KU Leuven and completed postdoctoral research at the University of Southern California.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/mvansegb", scholar="https://scholar.google.com/citations?user=XJ2L4LsAAAAJ&hl=en")}
+        </div>
+      </article>
+
+      <article class="person-full speaker">
+        <img class="person-photo" src="images/panelists/varun-kumar.png" alt="Varun Kumar" width="160" height="160" loading="lazy" />
+        <div class="person-copy">
+          {person_name("Varun Kumar")}
+          <p class="role">Senior Science Manager, Amazon Web Services</p>
+          <p>Varun Kumar is an applied science leader at Amazon Web Services, where he helps build Kiro, AWS's agentic development platform, and drive the science behind AI-native software development. His research spans machine learning, code intelligence, and AI agents, with publications across top-tier AI and machine learning conferences. His work covers reinforcement learning, language models, and agent evaluation and safety: the core building blocks of systems that can reason about code and act on a developer's behalf. Varun's recent work tackles how models learn from diverse feedback, how to evaluate them holistically, and how agents can collaborate with developers across multi-turn interactions, bridging frontier research and production-scale software systems.</p>
+{social_icons(linkedin="https://www.linkedin.com/in/varunin/", scholar="https://scholar.google.com/citations?user=d-La2lQAAAAJ&hl=en")}
         </div>
       </article>
     </div>
