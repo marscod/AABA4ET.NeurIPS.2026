@@ -1030,17 +1030,6 @@ speakers_body = f"""  <section class="page-section">
       <h2>Confirmed speakers</h2>
 
       <article class="person-full speaker">
-        <img class="person-photo" src="images/speakers/diyi-yang.jpg" alt="Diyi Yang" width="160" height="160" loading="lazy" />
-        <div class="person-copy">
-          {person_name("Diyi Yang", "https://nlp.stanford.edu/~diyiy/")}
-          <p class="role">Assistant Professor, Computer Science Department, Stanford University</p>
-          <p class="title-talk">Title: TBD</p>
-          <p>Diyi Yang is an assistant professor in the Computer Science Department at Stanford University, also affiliated with the Stanford NLP Group, Stanford HCI Group and Stanford Human Centered AI Institute. Her research focuses on human-centered natural language processing and human-AI interaction. She is a recipient of IEEE “AI 10 to Watch” (2020), Microsoft Research Faculty Fellowship (2021), NSF CAREER Award (2022), an ONR Young Investigator Award (2023), and a Sloan Research Fellowship (2024). Her work has received multiple paper awards or nominations at top NLP and HCI conferences.</p>
-{social_icons("https://nlp.stanford.edu/~diyiy/", "https://www.linkedin.com/in/diyi-yang-10561924", "https://scholar.google.com/citations?user=j9jhYqQAAAAJ&hl=en")}
-        </div>
-      </article>
-
-      <article class="person-full speaker">
         <img class="person-photo" src="images/speakers/YuSu.jpeg" alt="Yu Su" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Yu Su", "https://ysu1989.github.io/")}
@@ -1059,16 +1048,6 @@ speakers_body = f"""  <section class="page-section">
           <p class="title-talk">Title: TBD</p>
           <p>Dr. Wei-Peng Chen is a Research Director at Fujitsu Research of America. His research interests include Machine Learning, Natural Language Processing, Optimization, Software Engineering, Internet of Things, and Wireless Communications. He is a Senior Member of IEEE and ACM. He published 60+ journal or conference papers and was granted more than 130 US patents.</p>
 {social_icons(linkedin="https://www.linkedin.com/in/wei-peng-chen-882819a", scholar="https://scholar.google.com/citations?user=YBjteIQAAAAJ&hl=en")}
-        </div>
-      </article>
-
-      <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
-        <div class="person-copy">
-          {person_name("Furong Huang", "https://furong-huang.com/")}
-          <p class="role">Associate Professor, University of Maryland</p>
-          <p class="title-talk">Title: TBD</p>
-{social_icons("https://furong-huang.com/", "https://www.linkedin.com/in/furong-huang", "https://scholar.google.com/citations?user=13yyuCcAAAAJ&hl=en")}
         </div>
       </article>
 
