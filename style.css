@@ -851,14 +851,6 @@ body.past-sub .page-hero__media {
   padding: 1rem 0;
   border-top: 1px solid var(--line);
 }
-.paper-list .pid {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 0.25rem;
-}
 .paper-list h3 {
   font-size: 1.02rem;
   font-weight: 700;
