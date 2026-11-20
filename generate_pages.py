@@ -1088,7 +1088,7 @@ speakers_body = f"""  <section class="page-section">
         <div class="person-copy">
           {person_name("Qinghua Lu", "https://people.csiro.au/L/Q/Qinghua-Lu/")}
           <p class="role">Group Leader, Software Systems Research Group · Senior Principal Research Scientist, CSIRO</p>
-          <p class="title-talk">Title: TBD</p>
+          <p class="title-talk">Title: Safe AI Evaluation from a System Perspective</p>
           <p>Dr Qinghua Lu is Group Leader of the Software Systems Research Group and a Senior Principal Research Scientist at CSIRO, Australia's national science agency. Her research focuses on AI engineering, responsible AI and AI safety. She has published more than 200 papers in leading international journals and conferences. She is the lead author of Responsible AI: Best Practices for Creating Trustworthy AI Systems and co-author of Engineering AI Systems: Architecture and DevOps Essentials. Dr Lu is a member of the United Nations' Independent International Scientific Panel on AI, where she leads Working Group 4 on Security, Systems and Environmental Implications. She also contributes to major national and international AI safety initiatives, including the International Network of AI Safety Institutes and the Frontier Model Forum. Her work has informed Australian AI safety standards and practical responsible AI guidance for government and industry. She received the 2023 Asia-Pacific Women in AI Trailblazer Award.</p>
 {social_icons("https://people.csiro.au/L/Q/Qinghua-Lu/", "https://www.linkedin.com/in/qinghualu", "https://scholar.google.com/citations?user=yoHNu9oAAAAJ&hl=en")}
         </div>
