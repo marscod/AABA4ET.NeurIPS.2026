@@ -1063,16 +1063,6 @@ speakers_body = f"""  <section class="page-section">
       </article>
 
       <article class="person-full speaker">
-        <div class="person-photo person-photo--placeholder" aria-hidden="true"></div>
-        <div class="person-copy">
-          {person_name("Bertie Vidgen", "https://bertievidgen.com/")}
-          <p class="role">AI Research, Mercor</p>
-          <p class="title-talk">Title: TBD</p>
-{social_icons("https://bertievidgen.com/", "https://www.linkedin.com/in/bertie-vidgen-001/", "https://scholar.google.com/citations?user=yRhnVoIAAAAJ&hl=en")}
-        </div>
-      </article>
-
-      <article class="person-full speaker">
         <img class="person-photo" src="images/speakers/liang-zheng.jpg" alt="Liang Zheng" width="160" height="160" loading="lazy" />
         <div class="person-copy">
           {person_name("Liang Zheng", "https://zheng-lab-anu.github.io/")}
